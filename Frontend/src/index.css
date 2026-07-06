@@ -1,111 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  --color-primary: #1f5e4a;
+  --color-primary-dark: #164437;
+  --color-primary-light: #2e7d62;
+
+  --color-secondary: #c9a227;
+  --color-secondary-dark: #a7831f;
+  --color-secondary-light: #e0c15a;
+
+  --color-background: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-cream: #f8f5ef;
+  --color-border: #e5e7eb;
+
+  --color-text-main: #1b1b1b;
+  --color-text-muted: #6b7280;
+  --color-text-light: #9ca3af;
+  --color-text-white: #ffffff;
+
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+  --color-warning: #f59e0b;
+  --color-info: #2563eb;
+
+  --text-hero: 4rem;
+  --text-hero-mobile: 2.25rem;
+  --text-page-title: 3rem;
+  --text-section-title: 2.5rem;
+  --text-card-title: 1.5rem;
+  --text-subtitle: 1.25rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-xs: 0.75rem;
+  --text-nav: 1rem;
+  --text-button: 1rem;
+  --text-price: 1.75rem;
+
+  --leading-hero: 1.1;
+  --leading-hero-mobile: 1.15;
+  --leading-page-title: 1.15;
+  --leading-section-title: 1.2;
+  --leading-card-title: 1.3;
+  --leading-subtitle: 1.5;
+  --leading-body: 1.7;
+  --leading-small: 1.6;
+  --leading-xs: 1.5;
+  --leading-nav: 1.5;
+  --leading-button: 1.2;
+  --leading-price: 1.2;
+
+  --tracking-hero: -0.04em;
+  --tracking-page-title: -0.03em;
+  --tracking-section-title: -0.02em;
+  --tracking-card-title: -0.02em;
+
+  --radius-card: 20px;
+  --radius-button: 12px;
+  --radius-input: 12px;
+  --radius-image: 20px;
+  --radius-full: 9999px;
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 8px 24px rgba(31, 94, 74, 0.1);
+  --shadow-navbar: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+  --spacing: 0.25rem;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
+@utility container-custom {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1rem;
+
+  @variant sm {
+    padding-inline: 1.25rem;
+  }
+
+  @variant lg {
+    padding-inline: 2rem;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+@utility section-padding {
+  padding-block: 4rem;
+
+  @variant md {
+    padding-block: 5rem;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+  @variant lg {
+    padding-block: 6rem;
   }
+}
+
+@utility btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-button bg-primary px-6 py-3.5 text-button leading-button font-semibold text-text-white shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/15;
+}
+
+@utility btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-button bg-secondary px-6 py-3.5 text-button leading-button font-semibold text-text-main shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary-light focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-secondary/20;
+}
+
+@utility btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-button border border-border bg-surface px-6 py-3.5 text-button leading-button font-semibold text-primary shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/10;
+}
+
+@utility card {
+  @apply rounded-card border border-border bg-surface p-6 shadow-card;
+}
+
+@utility input-field {
+  @apply w-full rounded-input border border-border bg-surface px-4 py-3.5 text-body leading-body font-normal text-text-main shadow-soft outline-none transition duration-200 placeholder:text-text-light focus:border-primary focus:ring-4 focus:ring-primary/10;
+}
+
+@utility section-title {
+  @apply text-section-title leading-section-title tracking-section-title font-bold text-text-main;
+}
+
+@utility page-title {
+  @apply text-page-title leading-page-title tracking-page-title font-bold text-text-main;
+}
+
+@utility muted-text {
+  @apply text-body leading-body font-normal text-text-muted;
 }
 
 body {
-  margin: 0;
+  @apply m-0 min-h-screen bg-background font-sans text-text-main;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  @apply min-h-screen;
 }

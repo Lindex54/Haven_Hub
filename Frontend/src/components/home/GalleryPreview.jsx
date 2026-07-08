@@ -1,5 +1,6 @@
 import SectionHeader from '../common/SectionHeader'
 import { gallery } from '../../data/gallery'
+import Button from '../common/Button'
 
 function GalleryPreview() {
   return (
@@ -12,7 +13,7 @@ function GalleryPreview() {
         />
 
         <div className="grid auto-rows-[220px] gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {gallery.map((item) => (
+          {gallery.slice(0, 6).map((item) => (
             <article
               key={item.id}
               className={`group relative overflow-hidden rounded-image ${
@@ -32,6 +33,12 @@ function GalleryPreview() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Button to="/gallery" variant="outline">
+            View Full Gallery
+          </Button>
         </div>
       </div>
     </section>

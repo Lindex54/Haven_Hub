@@ -21,13 +21,13 @@ function ContactCTA() {
 
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
               <Button
-                href="#contact"
+                to="/contact"
                 variant="outline"
                 className="border-text-white/15 bg-text-white/8 text-text-white hover:bg-text-white/14 hover:text-text-white"
               >
                 Contact Us
               </Button>
-              <Button href="#availability" variant="secondary">
+              <Button to="/book-now" variant="secondary">
                 Book Now
               </Button>
             </div>

@@ -1,5 +1,19 @@
-const quickLinks = ['Home', 'Rooms', 'Experiences', 'Gallery', 'About', 'Contact']
-const socialLinks = ['Facebook', 'Instagram', 'X/Twitter', 'LinkedIn']
+import { Link } from 'react-router-dom'
+
+const quickLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'Rooms', to: '/rooms' },
+  { label: 'Experiences', to: '/experiences' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+]
+const socialLinks = [
+  { label: 'Facebook', href: 'https://facebook.com' },
+  { label: 'Instagram', href: 'https://instagram.com' },
+  { label: 'X/Twitter', href: 'https://x.com' },
+  { label: 'LinkedIn', href: 'https://linkedin.com' },
+]
 
 function Footer() {
   return (
@@ -21,13 +35,13 @@ function Footer() {
             </h4>
             <ul className="space-y-3 text-body leading-body text-text-white/75">
               {quickLinks.map((link) => (
-                <li key={link}>
-                  <a
-                    href={`#${link.toLowerCase().replace('/', '').replace(' ', '-')}`}
+                <li key={link.label}>
+                  <Link
+                    to={link.to}
                     className="transition hover:text-secondary-light"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -46,9 +60,14 @@ function Footer() {
             <h4 className="text-subtitle leading-subtitle font-semibold">Social</h4>
             <ul className="space-y-3 text-body leading-body text-text-white/75">
               {socialLinks.map((link) => (
-                <li key={link}>
-                  <a href="#home" className="transition hover:text-secondary-light">
-                    {link}
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-secondary-light"
+                  >
+                    {link.label}
                   </a>
                 </li>
               ))}

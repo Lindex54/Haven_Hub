@@ -44,7 +44,9 @@ function AvailabilityBar() {
             </label>
 
             <div className="flex items-end">
-              <Button className="w-full justify-center xl:w-auto">Search</Button>
+              <Button to="/book-now" className="w-full justify-center xl:w-auto">
+                Search
+              </Button>
             </div>
           </div>
         </div>

@@ -1,10 +1,12 @@
 import {
   CarFront,
   ConciergeBell,
+  MapPinned,
   Trees,
   UtensilsCrossed,
   Wifi,
 } from 'lucide-react'
+import Button from '../common/Button'
 import SectionHeader from '../common/SectionHeader'
 import { experiences } from '../../data/experiences'
 
@@ -14,6 +16,8 @@ const iconMap = {
   Gardens: Trees,
   'Secure Parking': CarFront,
   'Free Wi-Fi': Wifi,
+  Events: ConciergeBell,
+  'Local Attractions': MapPinned,
 }
 
 function ExperiencesPreview() {
@@ -27,7 +31,7 @@ function ExperiencesPreview() {
         />
 
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
-          {experiences.map((item) => {
+          {experiences.slice(0, 5).map((item) => {
             const Icon = iconMap[item.title]
 
             return (
@@ -49,6 +53,12 @@ function ExperiencesPreview() {
               </article>
             )
           })}
+        </div>
+
+        <div className="flex justify-center">
+          <Button to="/experiences" variant="outline">
+            Explore Experiences
+          </Button>
         </div>
       </div>
     </section>

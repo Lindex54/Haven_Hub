@@ -33,9 +33,9 @@ function Hero() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Button href="#rooms">Explore Rooms</Button>
+              <Button to="/rooms">Explore Rooms</Button>
               <Button
-                href="#availability"
+                to="/book-now"
                 variant="outline"
                 className="border-text-white/20 bg-text-white/8 text-text-white hover:bg-text-white/14 hover:text-text-white"
               >

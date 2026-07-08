@@ -150,6 +150,11 @@ a {
   @apply text-inherit no-underline;
 }
 
+a.btn-primary,
+button.btn-primary {
+  color: var(--color-text-white);
+}
+
 button,
 input,
 textarea,

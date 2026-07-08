@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom'
+
 function Button({
   children,
+  to,
   href,
   type = 'button',
   variant = 'primary',
@@ -13,6 +16,14 @@ function Button({
   }
 
   const classes = `${variants[variant] ?? variants.primary} ${className}`.trim()
+
+  if (to) {
+    return (
+      <Link to={to} className={classes} {...props}>
+        {children}
+      </Link>
+    )
+  }
 
   if (href) {
     return (

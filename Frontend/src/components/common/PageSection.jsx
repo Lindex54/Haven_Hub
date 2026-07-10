@@ -1,12 +1,7 @@
-function PageSection({
-  children,
-  className = '',
-  containerClassName = '',
-  background = '',
-}) {
+function PageSection({ children, className = '' }) {
   return (
-    <section className={`section-padding ${background} ${className}`.trim()}>
-      <div className={`container-custom ${containerClassName}`.trim()}>{children}</div>
+    <section className={`section-padding ${className}`}>
+      <div className="container-custom">{children}</div>
     </section>
   )
 }

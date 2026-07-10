@@ -1,82 +1,80 @@
 import { Link } from 'react-router-dom'
+import { footerNavigation } from '../../config/navigation'
+import { siteConfig } from '../../config/siteConfig'
+import { socialLinks } from '../../config/socialLinks'
+import SocialLinks from '../common/SocialLinks'
 
-const quickLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Rooms', to: '/rooms' },
-  { label: 'Experiences', to: '/experiences' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
-]
-const socialLinks = [
-  { label: 'Facebook', href: 'https://facebook.com' },
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'X/Twitter', href: 'https://x.com' },
-  { label: 'LinkedIn', href: 'https://linkedin.com' },
-]
+function FooterColumn({ title, links }) {
+  return (
+    <div className="space-y-4">
+      <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-main">
+        {title}
+      </h2>
+      <ul className="space-y-3 text-sm text-text-muted">
+        {links.map((link) => (
+          <li key={link.path}>
+            <Link className="transition hover:text-primary" to={link.path}>
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
 
 function Footer() {
   return (
-    <footer id="contact" className="bg-primary text-text-white">
-      <div className="container-custom section-padding">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
+    <footer className="border-t border-border/70 bg-surface/92">
+      <div className="container-custom py-14">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr] xl:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_0.9fr_0.9fr_0.8fr_0.8fr]">
           <div className="space-y-4">
-            <h3 className="text-card-title leading-card-title font-bold">
-              StayNest Lodge
-            </h3>
-            <p className="max-w-md text-body leading-body text-text-white/75">
-              Comfortable stays, easy bookings, unforgettable experiences.
+            <h2 className="text-card-title font-bold text-text-main">{siteConfig.name}</h2>
+            <p className="text-sm leading-7 text-text-muted">{siteConfig.tagline}</p>
+            <p className="text-sm leading-7 text-text-muted">
+              Wispers of Lake Katwe is an independent tourism and hospitality
+              business offering guided experiences, visitor planning and accommodation
+              services around Lake Katwe, Uganda.
             </p>
           </div>
-
+          <FooterColumn links={footerNavigation.discover} title="Discover" />
+          <FooterColumn links={footerNavigation.experiences} title="Experiences" />
+          <FooterColumn links={footerNavigation.stay} title="Stay" />
+          <FooterColumn links={footerNavigation.visitorSupport} title="Visitor Information" />
           <div className="space-y-4">
-            <h4 className="text-subtitle leading-subtitle font-semibold">
-              Quick Links
-            </h4>
-            <ul className="space-y-3 text-body leading-body text-text-white/75">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.to}
-                    className="transition hover:text-secondary-light"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-main">
+              Contact
+            </h2>
+            <div className="space-y-3 text-sm text-text-muted">
+              <p>{siteConfig.phone}</p>
+              <p>{siteConfig.whatsapp}</p>
+              <p>{siteConfig.email}</p>
+              <p>{siteConfig.location}</p>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-main">
+              Social Media
+            </h2>
+            <SocialLinks links={socialLinks} />
+          </div>
+          <div className="space-y-4">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-text-main">
+              Legal
+            </h2>
+            <ul className="space-y-3 text-sm text-text-muted">
+              <li>
+                <Link className="transition hover:text-primary" to="/privacy">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link className="transition hover:text-primary" to="/terms">
+                  Terms
+                </Link>
+              </li>
             </ul>
           </div>
-
-          <div className="space-y-4">
-            <h4 className="text-subtitle leading-subtitle font-semibold">Contact</h4>
-            <ul className="space-y-3 text-body leading-body text-text-white/75">
-              <li>Phone: +256 700 000 000</li>
-              <li>Email: info@staynest.com</li>
-              <li>Location: Kampala, Uganda</li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-subtitle leading-subtitle font-semibold">Social</h4>
-            <ul className="space-y-3 text-body leading-body text-text-white/75">
-              {socialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="transition hover:text-secondary-light"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 border-t border-text-white/15 pt-6 text-small leading-small text-text-white/60">
-          © 2026 StayNest Lodge. All rights reserved.
         </div>
       </div>
     </footer>

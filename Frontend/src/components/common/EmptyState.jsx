@@ -1,17 +1,8 @@
-import Button from './Button'
-
-function EmptyState({ title, description, actionLabel, actionTo = '/' }) {
+function EmptyState({ title, description }) {
   return (
-    <div className="card mx-auto max-w-2xl text-center">
-      <div className="space-y-4">
-        <h2 className="text-card-title leading-card-title tracking-card-title font-bold text-text-main">
-          {title}
-        </h2>
-        <p className="muted-text">{description}</p>
-      </div>
-      <div className="mt-6">
-        <Button to={actionTo}>{actionLabel}</Button>
-      </div>
+    <div className="rounded-card border border-dashed border-border bg-surface/80 p-8 text-center">
+      <h2 className="text-card-title font-semibold text-text-main">{title}</h2>
+      <p className="mt-3 muted-text">{description}</p>
     </div>
   )
 }

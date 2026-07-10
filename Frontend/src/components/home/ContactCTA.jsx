@@ -1,40 +1,28 @@
 import Button from '../common/Button'
+import PageSection from '../common/PageSection'
 
 function ContactCTA() {
   return (
-    <section className="section-padding">
-      <div className="container-custom">
-        <div className="overflow-hidden rounded-[32px] bg-[linear-gradient(135deg,_#1f5e4a_0%,_#164437_100%)] px-6 py-10 text-text-white shadow-medium sm:px-8 lg:px-12 lg:py-14">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="space-y-4 text-left">
-              <span className="inline-flex rounded-full bg-text-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-secondary-light">
-                Ready to plan?
-              </span>
-              <h2 className="text-section-title leading-section-title tracking-section-title font-bold">
-                Need help booking your stay?
-              </h2>
-              <p className="max-w-2xl text-body leading-body text-text-white/78">
-                Our team is ready to help you choose the right room and plan a
-                comfortable visit.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Button
-                to="/contact"
-                variant="outline"
-                className="border-text-white/15 bg-text-white/8 text-text-white hover:bg-text-white/14 hover:text-text-white"
-              >
-                Contact Us
-              </Button>
-              <Button to="/book-now" variant="secondary">
-                Book Now
-              </Button>
-            </div>
+    <PageSection>
+      <div className="rounded-[32px] bg-[linear-gradient(135deg,_rgba(31,94,74,0.96),_rgba(122,81,51,0.9))] px-6 py-10 text-text-white shadow-card sm:px-8 lg:px-12 lg:py-14">
+        <div className="max-w-3xl space-y-5">
+          <h2 className="text-section-title font-bold leading-section-title text-text-white">
+            Ready to explore Lake Katwe?
+          </h2>
+          <p className="text-base leading-8 text-white/85">
+            Tell us what you would like to experience, and our team will help you plan your visit, accommodation and activities.
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button className="bg-white text-primary hover:bg-white/90" to="/plan-your-visit">
+              Plan Your Visit
+            </Button>
+            <Button className="border-white/30 bg-white/10 text-white hover:bg-white/15" to="/contact" variant="outline">
+              Contact Us
+            </Button>
           </div>
         </div>
       </div>
-    </section>
+    </PageSection>
   )
 }
 

@@ -1,0 +1,95 @@
+export const publicNavigation = [
+  { label: 'Home', path: '/' },
+  {
+    label: 'Discover',
+    path: '/discover',
+    children: [
+      { label: 'Discover Lake Katwe', path: '/discover/lake-katwe' },
+      { label: 'Salt-Mining Heritage', path: '/discover/salt-mining' },
+      { label: 'Nature and Landscape', path: '/discover/nature' },
+      { label: 'Community and Culture', path: '/discover/community' },
+      { label: 'Wildlife and Birdlife', path: '/discover/wildlife' },
+      { label: 'Nearby Attractions', path: '/discover/nearby-attractions' },
+    ],
+  },
+  {
+    label: 'Tours & Experiences',
+    path: '/experiences',
+    children: [
+      { label: 'All Experiences', path: '/experiences' },
+      { label: 'Lake Katwe Guided Tour', path: '/experiences/lake-katwe-tour' },
+      { label: 'Salt-Mining Experience', path: '/experiences/salt-mining' },
+      { label: 'Nature Walks', path: '/experiences/nature-walks' },
+      { label: 'Birdwatching', path: '/experiences/birdwatching' },
+      { label: 'Community Experience', path: '/experiences/community' },
+      { label: 'Photography Tours', path: '/experiences/photography' },
+      { label: 'Cultural Tours', path: '/experiences/cultural-tour' },
+      { label: 'Group and School Visits', path: '/experiences/group-visits' },
+    ],
+  },
+  {
+    label: 'Stay',
+    path: '/stay',
+    children: [
+      { label: 'All Accommodation', path: '/stay' },
+      { label: 'Standard Rooms', path: '/stay/standard' },
+      { label: 'Deluxe Rooms', path: '/stay/deluxe' },
+      { label: 'Family Rooms', path: '/stay/family' },
+      { label: 'Group Accommodation', path: '/stay/groups' },
+      { label: 'Stay Information', path: '/stay/information' },
+    ],
+  },
+  {
+    label: 'Gallery',
+    path: '/gallery',
+    children: [
+      { label: 'Full Gallery', path: '/gallery' },
+      { label: 'Lake Katwe', path: '/gallery/lake-katwe' },
+      { label: 'Salt Mining', path: '/gallery/salt-mining' },
+      { label: 'Nature and Landscapes', path: '/gallery/nature' },
+      { label: 'Wildlife and Birds', path: '/gallery/wildlife' },
+      { label: 'Community Experiences', path: '/gallery/community' },
+      { label: 'Tours', path: '/gallery/tours' },
+      { label: 'Accommodation', path: '/gallery/accommodation' },
+    ],
+  },
+  {
+    label: 'About',
+    path: '/about',
+    children: [
+      { label: 'About the Company', path: '/about' },
+      { label: 'Our Story', path: '/about/story' },
+      { label: 'Our Guides', path: '/about/guides' },
+      { label: 'Community Commitment', path: '/about/community-commitment' },
+      { label: 'Responsible Tourism', path: '/about/responsible-tourism' },
+      { label: 'Frequently Asked Questions', path: '/about/faqs' },
+    ],
+  },
+  { label: 'Contact', path: '/contact' },
+  { label: 'Plan Your Visit', path: '/plan-your-visit', cta: true },
+]
+
+export const footerNavigation = {
+  discover: publicNavigation[1].children,
+  experiences: [
+    { label: 'Guided Tours', path: '/experiences/lake-katwe-tour' },
+    { label: 'Nature Walks', path: '/experiences/nature-walks' },
+    { label: 'Birdwatching', path: '/experiences/birdwatching' },
+    { label: 'Photography Tours', path: '/experiences/photography' },
+    { label: 'Group Visits', path: '/experiences/group-visits' },
+  ],
+  stay: [
+    { label: 'Accommodation', path: '/stay' },
+    { label: 'Standard Rooms', path: '/stay/standard' },
+    { label: 'Deluxe Rooms', path: '/stay/deluxe' },
+    { label: 'Family Rooms', path: '/stay/family' },
+    { label: 'Group Accommodation', path: '/stay/groups' },
+  ],
+  visitorSupport: [
+    { label: 'Plan Your Visit', path: '/plan-your-visit' },
+    { label: 'Contact', path: '/contact' },
+    { label: 'FAQs', path: '/about/faqs' },
+    { label: 'Privacy', path: '/privacy' },
+    { label: 'Terms', path: '/terms' },
+  ],
+}

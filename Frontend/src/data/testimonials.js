@@ -1,26 +1,23 @@
 export const testimonials = [
   {
     id: 1,
-    name: 'Grace N.',
-    location: 'Entebbe',
-    rating: 5,
-    review:
-      'StayNest made our visit simple and comfortable. The booking process was easy and the room was very clean.',
+    quote:
+      'The trip felt well paced and practical. We got a strong introduction to the area and enough flexibility to ask questions throughout the day.',
+    name: 'Sample Visitor',
+    type: 'Guided tour sample content',
   },
   {
     id: 2,
-    name: 'Daniel K.',
-    location: 'Kampala',
-    rating: 5,
-    review:
-      'The atmosphere feels calm and premium without being complicated. Staff support and the gardens stood out for us.',
+    quote:
+      'Our group appreciated how the planning combined accommodation, timing and local guidance into one clear itinerary.',
+    name: 'Sample Group Organiser',
+    type: 'Group visit sample content',
   },
   {
     id: 3,
-    name: 'Amina T.',
-    location: 'Jinja',
-    rating: 5,
-    review:
-      'A great option for both weekend rest and business travel. Beautiful rooms, smooth check-in, and very dependable service.',
+    quote:
+      'The stay gave us a comfortable base, and the photography-focused outing helped us make better use of the light and timing.',
+    name: 'Sample Traveller',
+    type: 'Photography visit sample content',
   },
 ]

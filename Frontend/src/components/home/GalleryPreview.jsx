@@ -1,47 +1,46 @@
-import SectionHeader from '../common/SectionHeader'
-import { gallery } from '../../data/gallery'
 import Button from '../common/Button'
+import PageSection from '../common/PageSection'
+import SectionHeader from '../common/SectionHeader'
+import { mediaAssets } from '../../config/mediaAssets'
+import { gallery } from '../../data/gallery'
+
+const featuredGalleryImages = [
+  mediaAssets.saltLake,
+  mediaAssets.craterLake,
+  mediaAssets.flamingos,
+  mediaAssets.treeLion,
+  mediaAssets.hippos,
+  mediaAssets.kob,
+]
 
 function GalleryPreview() {
   return (
-    <section id="gallery" className="section-padding">
-      <div className="container-custom space-y-12">
+    <PageSection className="bg-soft-background/80">
+      <div className="space-y-10">
         <SectionHeader
           eyebrow="Gallery"
-          title="Explore Our Lodge"
-          description="A glimpse of our rooms, outdoor spaces, dining areas, and relaxing environment."
+          title="Preview the destination through categories designed for expansion."
+          description="All gallery items currently use local placeholder images with meaningful alternative text, ready to be replaced with verified media."
         />
-
-        <div className="grid auto-rows-[220px] gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {gallery.slice(0, 6).map((item) => (
-            <article
-              key={item.id}
-              className={`group relative overflow-hidden rounded-image ${
-                item.featured ? 'md:col-span-2 md:row-span-2' : ''
-              }`}
-            >
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {gallery.slice(0, 8).map((item, index) => (
+            <figure key={item.id} className="overflow-hidden rounded-[24px] border border-border bg-surface shadow-card">
               <img
-                src={item.image}
-                alt={item.title}
-                className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                alt={featuredGalleryImages[index % featuredGalleryImages.length]?.alt ?? item.alt}
+                className="h-48 w-full object-cover"
+                loading="lazy"
+                src={featuredGalleryImages[index % featuredGalleryImages.length]?.src ?? item.src}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(27,27,27,0.02)_0%,rgba(27,27,27,0.68)_100%)]" />
-              <div className="absolute inset-x-0 bottom-0 p-5">
-                <p className="text-subtitle leading-subtitle font-semibold text-text-white">
-                  {item.title}
-                </p>
-              </div>
-            </article>
+              <figcaption className="p-4">
+                <p className="font-semibold text-text-main">{item.title}</p>
+                <p className="mt-2 text-sm text-text-muted">{item.description}</p>
+              </figcaption>
+            </figure>
           ))}
         </div>
-
-        <div className="flex justify-center">
-          <Button to="/gallery" variant="outline">
-            View Full Gallery
-          </Button>
-        </div>
+        <Button to="/gallery">View Full Gallery</Button>
       </div>
-    </section>
+    </PageSection>
   )
 }
 

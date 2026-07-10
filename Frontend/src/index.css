@@ -11,8 +11,12 @@
   --color-secondary: #c9a227;
   --color-secondary-dark: #a7831f;
   --color-secondary-light: #e0c15a;
+  --color-earth-brown: #7a5133;
+  --color-earth-brown-dark: #513722;
+  --color-lake-blue: #3b7c8c;
+  --color-lake-blue-light: #dcecef;
 
-  --color-background: #f5f7fa;
+  --color-background: #f5f7f3;
   --color-surface: #ffffff;
   --color-cream: #f8f5ef;
   --color-border: #e5e7eb;
@@ -146,6 +150,10 @@ body {
   @apply m-0 min-h-screen bg-background font-sans text-text-main;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   @apply text-inherit no-underline;
 }
@@ -164,4 +172,18 @@ select {
 
 #root {
   @apply min-h-screen;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

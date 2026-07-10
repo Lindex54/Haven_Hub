@@ -1,150 +1,139 @@
 import { ChevronDown, Menu, X } from 'lucide-react'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { publicNavigation } from '../../config/navigation'
+import { siteConfig } from '../../config/siteConfig'
 import Button from '../common/Button'
 
-const navItems = [
-  { label: 'Home', to: '/' },
-  {
-    label: 'Rooms',
-    to: '/rooms',
-    children: [
-      { label: 'All Rooms', to: '/rooms' },
-      { label: 'Deluxe Rooms', to: '/rooms/deluxe' },
-      { label: 'Standard Rooms', to: '/rooms/standard' },
-      { label: 'Executive Suites', to: '/rooms/executive' },
-      { label: 'Family Rooms', to: '/rooms/family' },
-    ],
-  },
-  {
-    label: 'Experiences',
-    to: '/experiences',
-    children: [
-      { label: 'All Experiences', to: '/experiences' },
-      { label: 'Restaurant & Dining', to: '/experiences/restaurant' },
-      { label: 'Conference Hall', to: '/experiences/conference' },
-      { label: 'Gardens', to: '/experiences/gardens' },
-      { label: 'Secure Parking', to: '/experiences/parking' },
-      { label: 'Free Wi-Fi', to: '/experiences/wifi' },
-      { label: 'Events', to: '/experiences/events' },
-      { label: 'Local Attractions', to: '/experiences/attractions' },
-    ],
-  },
-  {
-    label: 'Gallery',
-    to: '/gallery',
-    children: [
-      { label: 'Full Gallery', to: '/gallery' },
-      { label: 'Rooms Gallery', to: '/gallery/rooms' },
-      { label: 'Exterior Gallery', to: '/gallery/exterior' },
-      { label: 'Restaurant Gallery', to: '/gallery/restaurant' },
-      { label: 'Conference Gallery', to: '/gallery/conference' },
-      { label: 'Gardens Gallery', to: '/gallery/gardens' },
-      { label: 'Events Gallery', to: '/gallery/events' },
-    ],
-  },
-  {
-    label: 'About',
-    to: '/about',
-    children: [
-      { label: 'About StayNest', to: '/about' },
-      { label: 'Our Story', to: '/about/story' },
-      { label: 'Mission & Vision', to: '/about/mission' },
-      { label: 'Our Team', to: '/about/team' },
-      { label: 'FAQs', to: '/about/faqs' },
-    ],
-  },
-  { label: 'Contact', to: '/contact' },
-]
+function isPathActive(currentPath, path) {
+  if (path === '/') return currentPath === '/'
+  return currentPath === path || currentPath.startsWith(`${path}/`)
+}
 
 function Navbar() {
+  const { pathname } = useLocation()
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [openMobileGroup, setOpenMobileGroup] = useState('')
-  const location = useLocation()
+  const [desktopOpen, setDesktopOpen] = useState('')
+  const [mobileOpen, setMobileOpen] = useState('')
+  const closeTimerRef = useRef(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 12)
-    }
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 16)
     handleScroll()
     window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
-
     return () => {
       document.body.style.overflow = ''
     }
   }, [isOpen])
 
-  const navbarClass = isScrolled
-    ? 'border-b border-border/80 bg-surface/95 shadow-navbar backdrop-blur-xl'
-    : 'bg-surface/92 shadow-navbar backdrop-blur-xl'
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+        setMobileOpen('')
+        setDesktopOpen('')
+      }
+    }
 
-  const activeRoot = useMemo(() => {
-    const parts = location.pathname.split('/').filter(Boolean)
-    return parts[0] ?? ''
-  }, [location.pathname])
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
 
-  const rootIsActive = (to) => {
-    if (to === '/') return location.pathname === '/'
-    return activeRoot === to.replace('/', '')
+  const standardItems = publicNavigation.filter((item) => !item.cta)
+  const ctaItem = publicNavigation.find((item) => item.cta)
+
+  const openDesktopMenu = (label) => {
+    window.clearTimeout(closeTimerRef.current)
+    setDesktopOpen(label)
+  }
+
+  const queueDesktopClose = () => {
+    closeTimerRef.current = window.setTimeout(() => {
+      setDesktopOpen('')
+    }, 140)
+  }
+
+  const closeMobileMenu = () => {
+    setIsOpen(false)
+    setMobileOpen('')
   }
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ${navbarClass}`}>
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'border-b border-border/80 bg-surface/95 shadow-navbar backdrop-blur-xl'
+          : 'bg-surface/88 backdrop-blur-xl'
+      }`}
+    >
       <div className="container-custom">
         <nav className="flex min-h-[5.5rem] items-center justify-between gap-6">
-          <Link to="/" className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-subtitle leading-subtitle font-bold text-text-white">
+          <Link className="flex items-center gap-3" to="/">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-lg font-bold text-text-white">
               S
             </span>
             <div className="flex flex-col">
-              <span className="text-nav leading-nav font-bold text-text-main">
-                StayNest
-              </span>
-              <span className="text-xs uppercase tracking-[0.24em] text-text-light">
-                Lodge
+              <span className="text-nav font-bold text-text-main">{siteConfig.shortName}</span>
+              <span className="text-xs uppercase tracking-[0.2em] text-text-muted">
+                Lake Katwe
               </span>
             </div>
           </Link>
 
-          <div className="hidden items-center gap-8 lg:flex">
-            <div className="flex items-center gap-2">
-              {navItems.map((item) =>
+          <div className="hidden items-center gap-5 xl:flex">
+            <div className="flex items-center gap-1">
+              {standardItems.map((item) =>
                 item.children ? (
-                  <div key={item.label} className="group relative">
+                  <div
+                    key={item.label}
+                    className="relative"
+                    onBlur={(event) => {
+                      if (!event.currentTarget.contains(event.relatedTarget)) {
+                        queueDesktopClose()
+                      }
+                    }}
+                    onFocus={() => openDesktopMenu(item.label)}
+                    onMouseEnter={() => openDesktopMenu(item.label)}
+                    onMouseLeave={queueDesktopClose}
+                  >
                     <NavLink
-                      to={item.to}
-                      className={`inline-flex items-center gap-1 rounded-full px-4 py-3 text-nav leading-nav font-semibold transition-colors duration-200 ${
-                        rootIsActive(item.to)
+                      className={`inline-flex items-center gap-1 rounded-full px-4 py-3 text-nav font-semibold transition ${
+                        isPathActive(pathname, item.path)
                           ? 'bg-primary/8 text-primary'
                           : 'text-text-muted hover:text-primary'
                       }`}
+                      to={item.path}
                     >
                       {item.label}
                       <ChevronDown size={16} />
                     </NavLink>
-                    <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-3 rounded-card border border-border bg-surface p-3 opacity-0 shadow-navbar transition-all duration-200 group-hover:visible group-hover:translate-y-1 group-hover:opacity-100">
+                    <div
+                      aria-label={`${item.label} submenu`}
+                      className={`absolute left-0 top-full z-50 mt-2 w-72 rounded-card border border-border bg-surface p-3 shadow-navbar transition ${
+                        desktopOpen === item.label
+                          ? 'visible translate-y-0 opacity-100'
+                          : 'invisible -translate-y-2 opacity-0'
+                      }`}
+                      id={`${item.label}-menu`}
+                    >
                       <div className="space-y-1">
                         {item.children.map((child) => (
                           <NavLink
-                            key={child.to}
-                            to={child.to}
+                            key={child.path}
                             className={({ isActive }) =>
-                              `block rounded-button px-4 py-3 text-small leading-small transition ${
+                              `block rounded-button px-4 py-3 text-sm transition ${
                                 isActive
                                   ? 'bg-primary/8 font-semibold text-primary'
                                   : 'text-text-muted hover:bg-primary/5 hover:text-primary'
                               }`
                             }
+                            to={child.path}
                           >
                             {child.label}
                           </NavLink>
@@ -155,14 +144,13 @@ function Navbar() {
                 ) : (
                   <NavLink
                     key={item.label}
-                    to={item.to}
                     className={({ isActive }) =>
-                      `rounded-full px-4 py-3 text-nav leading-nav font-semibold transition-colors duration-200 ${
-                        isActive
-                          ? 'bg-primary/8 text-primary'
-                          : 'text-text-muted hover:text-primary'
+                      `rounded-full px-4 py-3 text-nav font-semibold transition ${
+                        isActive ? 'bg-primary/8 text-primary' : 'text-text-muted hover:text-primary'
                       }`
                     }
+                    end={item.path === '/'}
+                    to={item.path}
                   >
                     {item.label}
                   </NavLink>
@@ -170,15 +158,16 @@ function Navbar() {
               )}
             </div>
 
-            <Button to="/book-now">Book Now</Button>
+            <Button to={ctaItem.path}>{ctaItem.label}</Button>
           </div>
 
           <button
-            type="button"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface text-primary shadow-soft transition hover:border-primary lg:hidden"
-            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-controls="mobile-navigation"
             aria-expanded={isOpen}
-            onClick={() => setIsOpen((open) => !open)}
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface text-primary shadow-soft xl:hidden"
+            onClick={() => setIsOpen((current) => !current)}
+            type="button"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -186,72 +175,60 @@ function Navbar() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-border/70 bg-surface/98 transition-all duration-300 lg:hidden ${
+        className={`overflow-hidden border-t border-border/70 bg-surface/98 transition-all duration-300 xl:hidden ${
           isOpen ? 'max-h-[80svh] opacity-100' : 'max-h-0 opacity-0'
         }`}
+        id="mobile-navigation"
       >
         <div className="container-custom flex flex-col gap-2 py-4">
-          {navItems.map((item) =>
+          {standardItems.map((item) =>
             item.children ? (
-              <div key={item.label} className="rounded-card border border-border/60">
-                <div className="flex items-center justify-between gap-3 p-2">
+              <div key={item.label} className="rounded-card border border-border/70">
+                <div className="flex items-center gap-2 p-2">
                   <NavLink
-                    to={item.to}
-                    className={({ isActive }) =>
-                      `flex-1 rounded-button px-4 py-3 text-nav leading-nav font-semibold ${
-                        isActive || rootIsActive(item.to)
-                          ? 'text-primary'
-                          : 'text-text-main'
-                      }`
-                    }
-                    onClick={() => {
-                      setIsOpen(false)
-                      setOpenMobileGroup('')
-                    }}
+                    className={`flex-1 rounded-button px-4 py-3 text-nav font-semibold ${
+                      isPathActive(pathname, item.path) ? 'text-primary' : 'text-text-main'
+                    }`}
+                    onClick={closeMobileMenu}
+                    to={item.path}
                   >
                     {item.label}
                   </NavLink>
                   <button
-                    type="button"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-primary"
+                    aria-controls={`${item.label}-mobile-menu`}
+                    aria-expanded={mobileOpen === item.label}
                     aria-label={`Toggle ${item.label} submenu`}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full text-primary"
                     onClick={() =>
-                      setOpenMobileGroup((group) =>
-                        group === item.label ? '' : item.label,
-                      )
+                      setMobileOpen((current) => (current === item.label ? '' : item.label))
                     }
+                    type="button"
                   >
                     <ChevronDown
+                      className={`transition-transform ${mobileOpen === item.label ? 'rotate-180' : ''}`}
                       size={18}
-                      className={`transition-transform ${
-                        openMobileGroup === item.label ? 'rotate-180' : ''
-                      }`}
                     />
                   </button>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openMobileGroup === item.label
-                      ? 'max-h-[24rem] pb-2 opacity-100'
-                      : 'max-h-0 opacity-0'
+                    mobileOpen === item.label ? 'max-h-[28rem] pb-2 opacity-100' : 'max-h-0 opacity-0'
                   }`}
+                  id={`${item.label}-mobile-menu`}
                 >
                   <div className="space-y-1 px-2">
                     {item.children.map((child) => (
                       <NavLink
-                        key={child.to}
-                        to={child.to}
+                        key={child.path}
                         className={({ isActive }) =>
-                          `block rounded-button px-4 py-3 text-small leading-small ${
+                          `block rounded-button px-4 py-3 text-sm ${
                             isActive
                               ? 'bg-primary/8 font-semibold text-primary'
                               : 'text-text-muted hover:bg-primary/5 hover:text-primary'
                           }`
                         }
-                        onClick={() => {
-                          setIsOpen(false)
-                          setOpenMobileGroup('')
-                        }}
+                        onClick={closeMobileMenu}
+                        to={child.path}
                       >
                         {child.label}
                       </NavLink>
@@ -262,32 +239,21 @@ function Navbar() {
             ) : (
               <NavLink
                 key={item.label}
-                to={item.to}
                 className={({ isActive }) =>
-                  `rounded-button px-4 py-3 text-nav leading-nav font-semibold ${
-                    isActive
-                      ? 'bg-primary/8 text-primary'
-                      : 'text-text-main hover:bg-primary/5 hover:text-primary'
+                  `rounded-button px-4 py-3 text-nav font-semibold ${
+                    isActive ? 'bg-primary/8 text-primary' : 'text-text-main hover:bg-primary/5 hover:text-primary'
                   }`
                 }
-                onClick={() => {
-                  setIsOpen(false)
-                  setOpenMobileGroup('')
-                }}
+                end={item.path === '/'}
+                onClick={closeMobileMenu}
+                to={item.path}
               >
                 {item.label}
               </NavLink>
             ),
           )}
-          <Button
-            to="/book-now"
-            className="mt-2 justify-center"
-            onClick={() => {
-              setIsOpen(false)
-              setOpenMobileGroup('')
-            }}
-          >
-            Book Now
+          <Button className="mt-2 justify-center" onClick={closeMobileMenu} to={ctaItem.path}>
+            {ctaItem.label}
           </Button>
         </div>
       </div>

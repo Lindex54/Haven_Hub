@@ -158,7 +158,7 @@ function DiscoverPreview() {
               />
             ))}
           </div>
-          <Button className="!rounded-none" to="/discover" variant="secondary">
+          <Button className="!rounded-none" to="/discover">
             Discover Lake Katwe
           </Button>
         </div>

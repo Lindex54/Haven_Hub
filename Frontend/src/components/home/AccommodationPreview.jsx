@@ -15,9 +15,15 @@ function AccommodationPreview() {
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {accommodation.filter((item) => item.featured).map((item) => (
-            <article key={item.slug} className="card space-y-4">
+            <article key={item.slug} className="group overflow-hidden rounded-card border border-border bg-surface shadow-card">
+              <img
+                alt={item.imageAlt}
+                className="h-48 w-full object-cover transition duration-500 group-hover:scale-105"
+                src={item.image}
+              />
+              <div className="space-y-4 p-6">
               <h3 className="text-card-title font-semibold text-text-main">{item.name}</h3>
-              <p className="text-sm leading-7 text-text-muted">{item.description}</p>
+              <p className="text-sm leading-7 text-text-muted">{item.shortDescription}</p>
               <div className="space-y-1 text-sm text-text-muted">
                 <p>Capacity: {item.capacity} guests</p>
                 <p>Amenities: {item.amenities.slice(0, 3).join(', ')}</p>
@@ -28,6 +34,7 @@ function AccommodationPreview() {
               <Button to={`/stay/${item.slug}`} variant="outline">
                 View accommodation
               </Button>
+              </div>
             </article>
           ))}
         </div>

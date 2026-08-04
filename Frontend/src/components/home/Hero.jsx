@@ -79,10 +79,10 @@ function Hero() {
               <p className="mx-auto max-w-3xl text-lg leading-8 text-white/82 md:text-xl">
                 {siteConfig.tagline}
               </p>
-              <p className="mx-auto max-w-2xl text-base leading-8 text-white/66 md:text-lg">
+              {/* <p className="mx-auto max-w-2xl text-base leading-8 text-white/66 md:text-lg">
                 Guided tours, heritage-focused visits, travel planning and
                 accommodation for visitors exploring the Lake Katwe area.
-              </p>
+              </p> */}
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button className="min-w-44 justify-center" to="/plan-your-visit">

@@ -8,33 +8,33 @@ const aboutContent = {
   story: {
     title: 'Our Story',
     description:
-      'The current direction focuses on helping visitors explore Lake Katwe through tours, planning and accommodation rather than positioning the website as a hotel-only product.',
+      'Helping travellers experience the character, landscapes and everyday rhythm of Lake Katwe.',
     body: [
-      'The business is framed as an independent local operator offering travel support around Lake Katwe.',
-      'The site structure is built to grow as verified photography, guide profiles and travel information become available.',
+      'Wispers of Lake Katwe was created for travellers who want to go beyond a quick stop and spend time getting to know this remarkable place.',
+      'From a guided outing to a place to rest, we help shape simple, well-paced visits around what matters to you.',
     ],
   },
   guides: {
     title: 'Our Guides',
     description:
-      'Sample guide information is shown below and should be replaced with verified staff details before launch.',
+      'Friendly local guidance for a visit that feels easy, informed and personal.',
   },
   'community-commitment': {
     title: 'Community Commitment',
     description:
-      'This page uses careful language focused on respectful visitor practice rather than unsupported claims about community impact.',
+      'Travel with care, curiosity and respect for the people who call Lake Katwe home.',
     body: [
-      'We encourage respectful timing, guided introductions and visitor etiquette during community-oriented visits.',
-      'Any future claims about partnerships or measurable community benefits should be added only after verification.',
+      'The best visits start with listening. We encourage guests to arrive with an open mind, follow local guidance and take time to understand the place they are visiting.',
+      'Small gestures matter: ask before taking photographs, be mindful of people’s time and let every encounter happen at a comfortable pace.',
     ],
   },
   'responsible-tourism': {
     title: 'Responsible Tourism',
     description:
-      'Responsible tourism here means practical preparation, respectful behaviour and realistic expectations.',
+      'Leave a lighter footprint and take home a deeper connection to Lake Katwe.',
     body: [
-      'Visitors are encouraged to follow guide advice, ask before photographing people closely and plan with flexibility around conditions.',
-      'The site avoids claims about guaranteed sightings, official certification or public authority roles.',
+      'We ask visitors to follow their guide, respect the landscape and keep the places they enjoy clean for those who come after them.',
+      'Plans may shift with weather, seasons and local life. That flexibility is part of travelling well here.',
     ],
   },
   faqs: {

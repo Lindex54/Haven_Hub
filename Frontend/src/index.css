@@ -174,6 +174,24 @@ select {
   @apply min-h-screen;
 }
 
+/* The home page has many consecutive content blocks, so it uses a tighter rhythm
+   than standalone pages without changing their spacing. */
+.home-page .section-padding {
+  padding-block: 3.25rem;
+}
+
+@media (min-width: 768px) {
+  .home-page .section-padding {
+    padding-block: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-page .section-padding {
+    padding-block: 4.5rem;
+  }
+}
+
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;

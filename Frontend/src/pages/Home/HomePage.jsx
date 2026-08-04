@@ -17,7 +17,7 @@ function HomePage() {
   usePageMeta()
 
   return (
-    <main>
+    <main className="home-page">
       <Hero />
       <VisitorPlannerBar />
       <DiscoverPreview />

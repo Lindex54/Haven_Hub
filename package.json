@@ -1,0 +1,13 @@
+{
+  "name": "haven-hub",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm --prefix Frontend run build",
+    "lint": "npm --prefix Frontend run lint",
+    "install:frontend": "npm --prefix Frontend ci"
+  }
+}

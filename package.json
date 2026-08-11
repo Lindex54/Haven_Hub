@@ -6,8 +6,9 @@
     "node": ">=20"
   },
   "scripts": {
+    "postinstall": "npm --prefix Frontend install",
     "build": "npm --prefix Frontend run build",
     "lint": "npm --prefix Frontend run lint",
-    "install:frontend": "npm --prefix Frontend ci"
+    "install:frontend": "npm --prefix Frontend install"
   }
 }

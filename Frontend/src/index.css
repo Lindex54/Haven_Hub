@@ -172,6 +172,15 @@ button.btn-primary {
   align-items: flex-start;
 }
 
+.accommodation-swiper {
+  overflow: visible;
+  padding-block: 1.25rem;
+}
+
+.accommodation-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
 button,
 input,
 textarea,

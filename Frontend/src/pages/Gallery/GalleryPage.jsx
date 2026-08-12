@@ -11,7 +11,7 @@ import { usePageMeta } from '../../utils/pageMeta'
 
 function GalleryPage({ initialCategory = 'all' }) {
   const [activeCategory, setActiveCategory] = useState(initialCategory)
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(initialCategory === 'all' ? 1 : 0)
   const [isDetailsOpen, setIsDetailsOpen] = useState(false)
   const swiperRef = useRef(null)
   const pendingOpenIndexRef = useRef(null)
@@ -75,6 +75,7 @@ function GalleryPage({ initialCategory = 'all' }) {
               a11y={{ enabled: true }}
               centeredSlides
               grabCursor
+              initialSlide={initialCategory === 'all' ? 1 : 0}
               keyboard={{ enabled: true }}
               modules={[A11y, Keyboard]}
               onSwiper={(swiper) => {

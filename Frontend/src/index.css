@@ -163,6 +163,15 @@ button.btn-primary {
   color: var(--color-text-white);
 }
 
+.gallery-swiper {
+  overflow: visible;
+  padding-block: 1.25rem;
+}
+
+.gallery-swiper .swiper-wrapper {
+  align-items: flex-start;
+}
+
 button,
 input,
 textarea,

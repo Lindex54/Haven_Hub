@@ -14,7 +14,7 @@ function GalleryPreview() {
         <SectionHeader
           eyebrow="Gallery"
           title="Lake Katwe gallery"
-          description="All gallery items currently use local placeholder images with meaningful alternative text, ready to be replaced with verified media."
+          description="Browse local Lake Katwe images across community, tours, accommodation, nature and wildlife."
         />
         <div className="panorama-shell">
           <Swiper
@@ -55,7 +55,9 @@ function GalleryPreview() {
                     <figcaption className="panorama-details">
                       <span className="text-xs font-bold uppercase text-primary-dark">{category}</span>
                       <h3 className="mt-1 text-lg font-bold text-primary-dark sm:text-xl">{item.title}</h3>
-                      <p className="mt-1 text-sm font-medium text-primary-dark/80">Lake Katwe, Uganda</p>
+                      <p className="mt-1 line-clamp-3 text-sm font-medium leading-6 text-primary-dark/80">
+                        {item.description?.trim() || item.alt || 'Lake Katwe, Uganda'}
+                      </p>
                     </figcaption>
                   </figure>
                 </SwiperSlide>

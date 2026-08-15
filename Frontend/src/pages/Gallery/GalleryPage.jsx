@@ -25,6 +25,17 @@ function GalleryPage({ initialCategory = 'all' }) {
     [activeCategory],
   )
   const handleSlideSelect = (index) => {
+    if (activeCategory === 'all') {
+      if (index === activeIndex) {
+        setIsDetailsOpen((isOpen) => !isOpen)
+        return
+      }
+
+      setActiveIndex(index)
+      setIsDetailsOpen(true)
+      return
+    }
+
     if (index === activeIndex) {
       setIsDetailsOpen((isOpen) => !isOpen)
       return
@@ -41,6 +52,9 @@ function GalleryPage({ initialCategory = 'all' }) {
     setIsDetailsOpen(false)
     swiperRef.current?.slideTo(0)
   }
+
+  const getItemDescription = (item) =>
+    item.description?.trim() || item.alt || 'Lake Katwe visitor image with local travel context.'
 
   return (
     <main>
@@ -115,7 +129,7 @@ function GalleryPage({ initialCategory = 'all' }) {
                             {galleryCategories.find((category) => category.value === item.category)?.label ??
                               'Lake Katwe'}
                           </p>
-                          <p className="max-w-xl text-sm leading-7 text-white/80">{item.description}</p>
+                          <p className="max-w-xl text-sm leading-7 text-white/80">{getItemDescription(item)}</p>
                         </div>
                         <div className="flex shrink-0 items-center gap-1 text-secondary" aria-label="4 out of 5 stars">
                           {[0, 1, 2, 3, 4].map((star) => (
@@ -209,7 +223,7 @@ function GalleryPage({ initialCategory = 'all' }) {
                                   {galleryCategories.find((category) => category.value === item.category)?.label ??
                                     'Lake Katwe'}
                                 </p>
-                                <p className="max-w-xl text-sm leading-7 text-white/80">{item.description}</p>
+                                <p className="max-w-xl text-sm leading-7 text-white/80">{getItemDescription(item)}</p>
                               </div>
                               <div className="flex shrink-0 items-center gap-1 text-secondary" aria-label="4 out of 5 stars">
                                 {[0, 1, 2, 3, 4].map((star) => (

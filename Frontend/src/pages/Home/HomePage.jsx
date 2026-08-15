@@ -3,7 +3,7 @@ import AccommodationPreview from '../../components/home/AccommodationPreview'
 import DiscoverPreview from '../../components/home/DiscoverPreview'
 import FeaturedExperiences from '../../components/home/FeaturedExperiences'
 import GalleryPreview from '../../components/home/GalleryPreview'
-import GuidesPreview from '../../components/home/GuidesPreview'
+// import GuidesPreview from '../../components/home/GuidesPreview'
 import Hero from '../../components/home/Hero'
 import NatureHeritagePreview from '../../components/home/NatureHeritagePreview'
 import Testimonials from '../../components/home/Testimonials'
@@ -27,7 +27,7 @@ function HomePage() {
       <NatureHeritagePreview />
       <GalleryPreview />
       <WhyTravelWithUs />
-      <GuidesPreview />
+      {/* <GuidesPreview /> */}
       <Testimonials />
       <TravelInformationPreview />
       <ContactCTA />

@@ -25,7 +25,7 @@ function FeaturedExperiences() {
         <div className="space-y-12">
           <SectionHeader
             eyebrow="Experiences"
-            title="Guided experiences built for curious, well-prepared travellers."
+            title="Guided Lake Katwe tours"
             description="Choose from guided tours, nature walks, birdwatching and heritage visits shaped around thoughtful local guidance."
           />
 

@@ -31,7 +31,7 @@ function AccommodationPreview() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Stay"
-          title="Accommodation that supports the wider Lake Katwe visitor experience."
+          title="Stay at Lake Katwe"
           description="Use your stay as a comfortable base for guided visits, photography plans and group travel."
         />
         <Swiper

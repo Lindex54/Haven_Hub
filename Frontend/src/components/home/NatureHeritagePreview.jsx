@@ -31,7 +31,7 @@ function NatureHeritagePreview() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Landscape and Heritage"
-          title="Nature, heritage and community all shape the visitor story."
+          title="Nature and heritage"
           description="The platform now presents Lake Katwe as a layered travel destination rather than a stand-alone lodging offer."
         />
         <div className="grid gap-6 md:grid-cols-2">

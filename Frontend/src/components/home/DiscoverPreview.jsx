@@ -79,7 +79,7 @@ function DiscoverPreview() {
       <div className="space-y-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeader
-            title="A landscape shaped by salt, water and generations."
+            title="Discover Lake Katwe"
           />
           <div className="flex items-center gap-3" aria-label="Discover carousel controls">
             <button

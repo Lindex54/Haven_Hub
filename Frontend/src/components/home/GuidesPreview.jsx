@@ -9,7 +9,7 @@ function GuidesPreview() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Guides"
-          title="Sample guide profiles ready for verified staff information."
+          title="Meet our guides"
           description="Guide cards currently use placeholder content so the structure can be reviewed before real profiles are supplied."
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

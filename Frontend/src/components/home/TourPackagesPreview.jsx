@@ -9,7 +9,7 @@ function TourPackagesPreview() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Packages"
-          title="Flexible package ideas for short stays, combined visits and group planning."
+          title="Tour packages"
           description="Use these sample package structures as starting points for customised itineraries."
         />
         <div className="grid gap-6 lg:grid-cols-3">

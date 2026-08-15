@@ -8,7 +8,7 @@ function Testimonials() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Testimonials"
-          title="Sample visitor feedback for the new travel-focused direction."
+          title="Visitor feedback"
           description="These entries are mock content only and can be replaced with verified testimonials later."
         />
         <div className="grid gap-6 lg:grid-cols-3">

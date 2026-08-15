@@ -16,7 +16,7 @@ function WhyTravelWithUs() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Why Travel With Us"
-          title="Support that stays practical, welcoming and flexible."
+          title="Why travel with us"
           description="The focus is on helping visitors shape a thoughtful trip around real interests, pacing and logistics."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

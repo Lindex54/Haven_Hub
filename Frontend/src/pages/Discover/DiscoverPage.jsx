@@ -19,7 +19,7 @@ function DiscoverPage() {
       <PageSection>
         <div className="space-y-10">
           <SectionHeader
-            title="A fuller picture of the destination."
+            title="Lake Katwe highlights"
             description="This section introduces the core themes visitors may want to explore before choosing experiences, accommodation or a custom itinerary."
           />
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

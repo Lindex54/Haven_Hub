@@ -13,7 +13,7 @@ export const publicNavigation = [
     ],
   },
   {
-    label: 'Tours & Experiences',
+    label: 'Tours',
     path: '/experiences',
     children: [
       { label: 'All Experiences', path: '/experiences' },

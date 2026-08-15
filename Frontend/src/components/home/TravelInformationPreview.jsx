@@ -9,7 +9,7 @@ function TravelInformationPreview() {
       <div className="space-y-10">
         <SectionHeader
           eyebrow="Travel Information"
-          title="Practical visitor guidance before you arrive."
+          title="Travel information"
           description="Use these preparation notes as a starting point, then request a tailored plan if you need itinerary or logistics support."
         />
         <div className="grid gap-4 md:grid-cols-2">

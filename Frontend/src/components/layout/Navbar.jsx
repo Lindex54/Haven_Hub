@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import wispersLogo from '../../assets/images/brand/wispers_logo.png'
 import { publicNavigation } from '../../config/navigation'
 import { siteConfig } from '../../config/siteConfig'
 import Button from '../common/Button'
@@ -74,16 +75,12 @@ function Navbar() {
     >
       <div className="container-custom">
         <nav className="flex min-h-[5.5rem] items-center justify-between gap-6">
-          <Link className="flex items-center gap-3" to="/">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-lg font-bold text-text-white">
-              S
-            </span>
-            <div className="flex flex-col">
-              <span className="text-nav font-bold text-text-main">{siteConfig.shortName}</span>
-              <span className="text-xs uppercase tracking-[0.2em] text-text-muted">
-                Lake Katwe
-              </span>
-            </div>
+          <Link className="flex shrink-0 items-center" to="/" aria-label={`${siteConfig.name} home`}>
+            <img
+              alt={siteConfig.name}
+              className="h-20 w-auto max-w-[18rem] object-contain sm:max-w-[24rem]"
+              src={wispersLogo}
+            />
           </Link>
 
           <div className="hidden items-center gap-5 xl:flex">
@@ -158,7 +155,9 @@ function Navbar() {
               )}
             </div>
 
-            <Button to={ctaItem.path}>{ctaItem.label}</Button>
+            <Button className="whitespace-nowrap" to={ctaItem.path}>
+              {ctaItem.label}
+            </Button>
           </div>
 
           <button

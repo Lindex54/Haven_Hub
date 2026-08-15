@@ -172,6 +172,88 @@ button.btn-primary {
   align-items: flex-start;
 }
 
+.panorama-shell {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  overflow: hidden;
+  background: var(--color-surface);
+  padding-block: 2rem;
+}
+
+.panorama-swiper {
+  overflow: visible;
+}
+
+.panorama-swiper .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear !important;
+}
+
+.panorama-slide {
+  --panorama-edge-scale: 1;
+  --panorama-edge-tilt: 0deg;
+  width: min(78vw, 27rem) !important;
+}
+
+.panorama-slide:nth-child(3n + 2) {
+  width: min(68vw, 23rem) !important;
+}
+
+.panorama-slide:nth-child(4n + 3) {
+  width: min(84vw, 32rem) !important;
+}
+
+.panorama-frame {
+  position: relative;
+  height: clamp(15rem, 29vw, 22rem);
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+  outline-offset: -4px;
+  transform: perspective(80rem) rotateY(var(--panorama-edge-tilt)) scaleY(var(--panorama-edge-scale));
+  transform-origin: center;
+  transition: transform 180ms linear;
+}
+
+.panorama-details {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  min-height: 42%;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: rgba(201, 227, 196, 0.93);
+  backdrop-filter: blur(3px);
+  transform: translateY(102%);
+  transition: transform 450ms ease;
+}
+
+.panorama-frame:hover .panorama-details,
+.panorama-frame:focus .panorama-details,
+.panorama-frame:focus-within .panorama-details {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .panorama-shell {
+    padding-block: 2.5rem;
+  }
+
+  .panorama-slide {
+    width: min(39vw, 34rem) !important;
+  }
+
+  .panorama-slide:nth-child(3n + 2) {
+    width: min(32vw, 28rem) !important;
+  }
+
+  .panorama-slide:nth-child(4n + 3) {
+    width: min(46vw, 40rem) !important;
+  }
+}
+
 .accommodation-swiper {
   overflow: visible;
   padding-block: 1.25rem;

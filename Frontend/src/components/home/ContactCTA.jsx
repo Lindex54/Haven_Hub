@@ -13,7 +13,12 @@ function ContactCTA() {
             Tell us what you would like to experience, and our team will help you plan your visit, accommodation and activities.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button className="bg-white text-primary hover:bg-white/90" to="/plan-your-visit">
+            <Button
+              className="border-white bg-white text-primary hover:border-white hover:bg-white/90"
+              style={{ color: 'var(--color-primary)' }}
+              to="/plan-your-visit"
+              variant="outline"
+            >
               Plan Your Visit
             </Button>
             <Button className="border-white/30 bg-white/10 text-white hover:bg-white/15" to="/contact" variant="outline">

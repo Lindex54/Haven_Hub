@@ -4,20 +4,20 @@ import Button from '../common/Button'
 import PageSection from '../common/PageSection'
 import SectionHeader from '../common/SectionHeader'
 import { discoverHighlights } from '../../data/discover'
-import lakePanorama from '../../assets/images/discover/lake-katwe-salt-lake-panorama.jpg'
-import saltWorkers from '../../assets/images/discover/lake-katwe-salt-workers.jpg'
-import craterAerial from '../../assets/images/discover/lake-katwe-crater-aerial-view.jpg'
-import localGuide from '../../assets/images/discover/lake-katwe-local-salt-guide.jpg'
-import flamingos from '../../assets/images/discover/flamingos-on-lake-katwe.jpg'
-import lakeSunset from '../../assets/images/discover/lake-katwe-sunset.jpg'
+import fisherManImage from '../../assets/images/wispers/fisher-man-image.png'
+import natureAnimals from '../../assets/images/wispers/nature-animals.png'
+import wisperImage10 from '../../assets/images/wispers/wisper-image10.png'
+import wisperNature from '../../assets/images/wispers/wisper-nature.png'
+import wispersImage3 from '../../assets/images/wispers/wispers-image3.png'
+import wispersImage8 from '../../assets/images/wispers/wispers-image8.png'
 
 const previewImages = [
-  { src: lakePanorama, alt: 'Panoramic view across Lake Katwe and its surrounding crater landscape.' },
-  { src: saltWorkers, alt: 'Local salt workers among the traditional salt pans at Lake Katwe.' },
-  { src: craterAerial, alt: 'Aerial view of a crater lake and the green landscape around Lake Katwe.' },
-  { src: localGuide, alt: 'A local guide standing near the mineral-rich landscape of Lake Katwe.' },
-  { src: flamingos, alt: 'Flamingos feeding in the shallow waters near Lake Katwe.' },
-  { src: lakeSunset, alt: 'Warm evening light over the calm waters and hills near Lake Katwe.' },
+  { src: wisperNature, alt: 'Entrance sign and natural setting for Whispers of Lake Katwe.' },
+  { src: wispersImage3, alt: 'Local women standing with salt crystals during a Lake Katwe visit.' },
+  { src: wisperImage10, alt: 'A visitor standing beside the water with Lake Katwe scenery behind.' },
+  { src: wispersImage8, alt: 'Guests seated together during a group travel experience.' },
+  { src: natureAnimals, alt: 'Wildlife gathered near water in the wider Lake Katwe area.' },
+  { src: fisherManImage, alt: 'A local man standing on a small boat on the water near Lake Katwe.' },
 ]
 
 function getCardsPerView(width) {

@@ -27,13 +27,6 @@ function Navbar() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
-
-  useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
         setIsOpen(false)
@@ -174,12 +167,14 @@ function Navbar() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-border/70 bg-surface/98 transition-all duration-300 xl:hidden ${
-          isOpen ? 'max-h-[80svh] opacity-100' : 'max-h-0 opacity-0'
+        className={`border-t border-border/70 bg-surface/98 transition-all duration-300 xl:hidden ${
+          isOpen
+            ? 'h-[calc(100dvh-5.5rem)] max-h-[calc(100dvh-5.5rem)] overflow-hidden opacity-100'
+            : 'h-0 max-h-0 overflow-hidden opacity-0'
         }`}
         id="mobile-navigation"
       >
-        <div className="container-custom flex flex-col gap-2 py-4">
+        <div className="container-custom flex h-full flex-col gap-2 overflow-y-auto overscroll-contain py-4 [-webkit-overflow-scrolling:touch]">
           {standardItems.map((item) =>
             item.children ? (
               <div key={item.label} className="rounded-card border border-border/70">

@@ -1,27 +1,43 @@
 import PageSection from '../common/PageSection'
 import SectionHeader from '../common/SectionHeader'
-import { mediaAssets } from '../../config/mediaAssets'
+import natureAnimals from '../../assets/images/wispers/nature-animals.png'
+import wisperImage10 from '../../assets/images/wispers/wisper-image10.png'
+import wispersImage1 from '../../assets/images/wispers/wispers-image1.png'
+import wispersImage3 from '../../assets/images/wispers/wispers-image3.png'
 
 const themes = [
   {
     title: 'Volcanic landscape',
     description: 'Wide scenery, crater views and changing light create a strong visual identity for the destination.',
-    image: mediaAssets.craterLake,
+    image: {
+      src: wisperImage10,
+      alt: 'A visitor standing beside the water with Lake Katwe scenery behind.',
+    },
   },
   {
     title: 'Salt-mining heritage',
     description: 'Guided interpretation helps visitors approach the heritage story with context and respect.',
-    image: mediaAssets.saltLake,
+    image: {
+      src: wispersImage3,
+      alt: 'Local women standing with salt crystals during a Lake Katwe visit.',
+    },
   },
   {
     title: 'Wildlife and birdlife',
     description: 'Outdoor experiences can be shaped around observation, walking pace and flexible timing.',
-    image: mediaAssets.flamingos,
+    image: {
+      src: natureAnimals,
+      alt: 'Wildlife gathered near water in the wider Lake Katwe area.',
+    },
   },
   {
     title: 'Community and culture',
     description: 'Thoughtful planning supports respectful visits and meaningful local engagement.',
-    image: mediaAssets.hippos,
+    image: {
+      src: wispersImage1,
+      alt: 'Visitors and hosts gathered indoors during a community visit.',
+    },
+    imageClassName: 'object-top',
   },
 ]
 
@@ -42,7 +58,7 @@ function NatureHeritagePreview() {
             >
               <img
                 alt={theme.image.alt}
-                className="h-56 w-full object-cover"
+                className={`h-56 w-full object-cover ${theme.imageClassName ?? ''}`}
                 loading="lazy"
                 src={theme.image.src}
               />

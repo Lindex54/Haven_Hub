@@ -46,7 +46,7 @@ function GalleryPage({ initialCategory = 'all' }) {
     <main>
       <PageHero
         breadcrumbs={[{ label: 'Home', path: '/' }, { label: 'Gallery' }]}
-        description="Browse placeholder photography categories ready for verified destination, tour and accommodation media."
+        description="Browse Lake Katwe photography across destination, salt heritage, nature, wildlife, community, tours and accommodation."
         eyebrow="Gallery"
         title="Gallery"
       />

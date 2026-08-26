@@ -1,4 +1,11 @@
-import placeholder from '../assets/images/placeholders/lake-katwe-placeholder.png'
+import boatTourGuests from '../assets/images/gallery/boat-tour-guests.png'
+import communityGuidedVisit from '../assets/images/gallery/community-guided-visit.png'
+import communitySaltWork from '../assets/images/gallery/community-salt-work.png'
+import craterAerialView from '../assets/images/gallery/crater-aerial-view.png'
+import flamingosOnLakeKatwe from '../assets/images/gallery/flamingos-on-lake-katwe.png'
+import lakeKatwePanorama from '../assets/images/gallery/lake-katwe-panorama.png'
+import lakeKatweSunset from '../assets/images/gallery/lake-katwe-sunset.png'
+import saltWorkers from '../assets/images/gallery/salt-workers.png'
 
 export const experiences = [
   {
@@ -17,8 +24,8 @@ export const experiences = [
     meetingPoint: 'Lake Katwe area meeting point to be confirmed',
     difficulty: 'Easy',
     featured: true,
-    image: placeholder,
-    gallery: [placeholder],
+    image: lakeKatwePanorama,
+    gallery: [lakeKatwePanorama],
     highlights: ['Destination introduction', 'Landscape viewpoints', 'Visitor orientation'],
     included: ['Guide support', 'Experience briefing', 'Flexible pacing'],
     excluded: ['Transport unless requested', 'Meals unless arranged'],
@@ -42,8 +49,8 @@ export const experiences = [
     meetingPoint: 'Guide briefing point near Lake Katwe',
     difficulty: 'Easy',
     featured: true,
-    image: placeholder,
-    gallery: [placeholder],
+    image: saltWorkers,
+    gallery: [saltWorkers],
     highlights: ['Salt heritage context', 'Photography guidance', 'Guide-led interpretation'],
     included: ['Guide support', 'Visitor briefing'],
     excluded: ['Personal purchases', 'Transport unless requested'],
@@ -67,8 +74,8 @@ export const experiences = [
     meetingPoint: 'Guest accommodation or agreed starting point',
     difficulty: 'Easy to moderate',
     featured: true,
-    image: placeholder,
-    gallery: [placeholder],
+    image: craterAerialView,
+    gallery: [craterAerialView],
     highlights: ['Open views', 'Crater landscape', 'Sunrise or sunset timing'],
     included: ['Guide support'],
     excluded: ['Transport unless requested'],
@@ -92,8 +99,8 @@ export const experiences = [
     meetingPoint: 'To be confirmed',
     difficulty: 'Easy',
     featured: true,
-    image: placeholder,
-    gallery: [placeholder],
+    image: flamingosOnLakeKatwe,
+    gallery: [flamingosOnLakeKatwe],
     highlights: ['Quiet observation', 'Flexible timing', 'Photography-friendly pacing'],
     included: ['Guide support'],
     excluded: ['Specialist equipment'],
@@ -117,8 +124,8 @@ export const experiences = [
     meetingPoint: 'To be confirmed',
     difficulty: 'Easy',
     featured: false,
-    image: placeholder,
-    gallery: [placeholder],
+    image: communityGuidedVisit,
+    gallery: [communityGuidedVisit],
     highlights: ['Local context', 'Visitor etiquette support', 'Flexible planning'],
     included: ['Guide support'],
     excluded: ['Purchases and donations'],
@@ -142,8 +149,8 @@ export const experiences = [
     meetingPoint: 'To be confirmed',
     difficulty: 'Easy to moderate',
     featured: true,
-    image: placeholder,
-    gallery: [placeholder],
+    image: lakeKatweSunset,
+    gallery: [lakeKatweSunset],
     highlights: ['Sunrise and sunset timing', 'Landscape framing', 'Local guidance'],
     included: ['Guide support'],
     excluded: ['Photography gear'],
@@ -167,8 +174,8 @@ export const experiences = [
     meetingPoint: 'To be confirmed',
     difficulty: 'Easy',
     featured: false,
-    image: placeholder,
-    gallery: [placeholder],
+    image: communitySaltWork,
+    gallery: [communitySaltWork],
     highlights: ['Place-based storytelling', 'Flexible for mixed-interest groups'],
     included: ['Guide support'],
     excluded: ['Meals unless arranged'],
@@ -192,8 +199,8 @@ export const experiences = [
     meetingPoint: 'To be confirmed',
     difficulty: 'Flexible',
     featured: true,
-    image: placeholder,
-    gallery: [placeholder],
+    image: boatTourGuests,
+    gallery: [boatTourGuests],
     highlights: ['Group logistics support', 'Flexible itinerary design', 'Accommodation coordination'],
     included: ['Planning assistance', 'Guide coordination'],
     excluded: ['Quoted services not yet confirmed'],

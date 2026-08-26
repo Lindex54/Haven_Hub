@@ -78,13 +78,20 @@ function Footer() {
                 <Phone size={17} className="mt-0.5 shrink-0 text-secondary" />
                 {siteConfig.phone}
               </a>
-              <a
-                className="flex items-start gap-3 transition hover:text-secondary"
-                href={`mailto:${siteConfig.email}`}
-              >
+              <div className="flex items-start gap-3">
                 <Mail size={17} className="mt-0.5 shrink-0 text-secondary" />
-                {siteConfig.email}
-              </a>
+                <div className="flex flex-col gap-2">
+                  {siteConfig.emails.map((email) => (
+                    <a
+                      className="transition hover:text-secondary"
+                      href={`mailto:${email}`}
+                      key={email}
+                    >
+                      {email}
+                    </a>
+                  ))}
+                </div>
+              </div>
               <p className="flex items-start gap-3">
                 <MapPin size={17} className="mt-0.5 shrink-0 text-secondary" />
                 {siteConfig.location}

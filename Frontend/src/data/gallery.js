@@ -1,18 +1,17 @@
-import fisherManImage from '../assets/images/wispers/fisher-man-image.png'
-import natureAnimals from '../assets/images/wispers/nature-animals.png'
-import wisperImage from '../assets/images/wispers/wisper-image.png'
-import wisperImage10 from '../assets/images/wispers/wisper-image10.png'
-import wisperNature from '../assets/images/wispers/wisper-nature.png'
-import wispersImage1 from '../assets/images/wispers/wispers-image1.png'
-import wispersImage2 from '../assets/images/wispers/wispers-image2.png'
-import wispersImage3 from '../assets/images/wispers/wispers-image3.png'
-import wispersImage4 from '../assets/images/wispers/wispers-image4.png'
-import wispersImage5 from '../assets/images/wispers/wispers-image5.png'
-import wispersImage6 from '../assets/images/wispers/wispers-image6.png'
-import wispersImage7 from '../assets/images/wispers/wispers-image7.png'
-import wispersImage8 from '../assets/images/wispers/wispers-image8.png'
-import wispersImage9 from '../assets/images/wispers/wispers-image9.png'
-import wispersImage10 from '../assets/images/wispers/wispers-image10.png'
+import accommodationPoolView from '../assets/images/gallery/accommodation-pool-view.png'
+import boatTourGuests from '../assets/images/gallery/boat-tour-guests.png'
+import colorfulSaltPans from '../assets/images/gallery/colorful-salt-pans.png'
+import communityGuidedVisit from '../assets/images/gallery/community-guided-visit.png'
+import communitySaltWork from '../assets/images/gallery/community-salt-work.png'
+import craterAerialView from '../assets/images/gallery/crater-aerial-view.png'
+import flamingosOnLakeKatwe from '../assets/images/gallery/flamingos-on-lake-katwe.png'
+import guestHouseDining from '../assets/images/gallery/guest-house-dining.png'
+import guidedLakeTour from '../assets/images/gallery/guided-lake-tour.png'
+import lakeKatwePanorama from '../assets/images/gallery/lake-katwe-panorama.png'
+import lakeKatweSunset from '../assets/images/gallery/lake-katwe-sunset.png'
+import queenElizabethBirdlife from '../assets/images/gallery/queen-elizabeth-birdlife.png'
+import saltFlatsView from '../assets/images/gallery/salt-flats-view.png'
+import saltWorkers from '../assets/images/gallery/salt-workers.png'
 
 export const galleryCategories = [
   { label: 'Lake Katwe', value: 'lake-katwe' },
@@ -27,177 +26,100 @@ export const galleryCategories = [
 const galleryImages = {
   'lake-katwe': [
     {
-      src: wisperNature,
-      alt: 'Entrance sign and natural setting for Whispers of Lake Katwe.',
-      title: 'Whispers of Lake Katwe',
-      description:
-        'A welcoming Lake Katwe setting for visitors starting their destination experience.',
+      src: lakeKatwePanorama,
+      alt: 'Panoramic view across Lake Katwe and its surrounding landscape.',
+      title: 'Lake Katwe panorama',
+      description: 'A wide view of Lake Katwe and the distinctive landscape surrounding the water.',
     },
     {
-      src: wisperImage,
-      alt: 'Cattle grazing in the green landscape near Lake Katwe.',
-      title: 'Lake Katwe landscape',
-      description:
-        'Open scenery around Lake Katwe, suited to relaxed viewing and wider destination context.',
+      src: craterAerialView,
+      alt: 'Aerial view of the Lake Katwe crater landscape.',
+      title: 'Crater landscape',
+      description: 'An elevated perspective showing the shape and scale of the Lake Katwe crater area.',
     },
   ],
   'salt-mining': [
     {
-      src: fisherManImage,
-      alt: 'A local man standing on a small boat on the water near Lake Katwe.',
-      title: 'Lake activity',
-      description:
-        'A local water scene that helps visitors connect Lake Katwe experiences with everyday activity.',
+      src: colorfulSaltPans,
+      alt: 'Colorful salt pans arranged along the shore of Lake Katwe.',
+      title: 'Colorful salt pans',
+      description: 'The varied colors and patterns of the traditional salt pans beside Lake Katwe.',
     },
     {
-      src: wispersImage3,
-      alt: 'Local women standing with salt crystals during a Lake Katwe visit.',
-      title: 'Salt heritage moment',
-      description:
-        'A guide-friendly salt heritage image connected to local people and visitor learning.',
+      src: saltWorkers,
+      alt: 'Local salt workers at Lake Katwe.',
+      title: 'Salt workers',
+      description: 'Local knowledge and daily work at the heart of Lake Katwe’s salt-mining heritage.',
     },
   ],
   nature: [
     {
-      src: wisperImage10,
-      alt: 'A visitor standing beside the water with Lake Katwe scenery behind.',
-      title: 'Lake edge views',
-      description:
-        'A scenic lake-edge stop for relaxed viewing, photos and orientation around the area.',
+      src: lakeKatweSunset,
+      alt: 'Sunset casting warm light across Lake Katwe.',
+      title: 'Lake Katwe sunset',
+      description: 'Evening light creates a calm and colorful view across Lake Katwe.',
     },
     {
-      src: wispersImage5,
-      alt: 'Visitors standing by palms and water near Lake Katwe.',
-      title: 'Scenic visitor stop',
-      description:
-        'A calm outdoor setting for nature walks, guest photos and slower-paced exploration.',
+      src: saltFlatsView,
+      alt: 'Natural textures and open views across the Lake Katwe salt flats.',
+      title: 'Salt flats landscape',
+      description: 'The natural textures, colors and open scenery of the Lake Katwe salt flats.',
     },
   ],
   wildlife: [
     {
-      src: natureAnimals,
-      alt: 'Wildlife gathered near water in the wider Lake Katwe area.',
-      title: 'Wildlife near water',
-      description:
-        'Wildlife imagery for visitors interested in quiet observation and flexible outdoor outings.',
+      src: flamingosOnLakeKatwe,
+      alt: 'Flamingos gathered on the water at Lake Katwe.',
+      title: 'Flamingos on the lake',
+      description: 'Flamingos add movement and color to the wider Lake Katwe ecosystem.',
     },
     {
-      src: wispersImage10,
-      alt: 'An elephant walking near water in the wider Lake Katwe and Queen Elizabeth area.',
-      title: 'Nearby wildlife',
-      description:
-        'A nearby wildlife scene that fits wider Queen Elizabeth and Lake Katwe itinerary planning.',
+      src: queenElizabethBirdlife,
+      alt: 'Birdlife in the Queen Elizabeth National Park area near Lake Katwe.',
+      title: 'Nearby birdlife',
+      description: 'Birdwatching opportunities extend into the surrounding Queen Elizabeth landscape.',
     },
   ],
   community: [
     {
-      src: wispersImage1,
-      alt: 'Visitors and hosts gathered indoors during a community visit.',
-      title: 'Community gathering',
-      description:
-        'A community-oriented moment showing group connection, hosting and visitor engagement.',
+      src: communityGuidedVisit,
+      alt: 'Visitors taking part in a guided community experience near Lake Katwe.',
+      title: 'Community-guided visit',
+      description: 'A locally guided visit connecting guests with people, place and everyday life.',
     },
     {
-      src: wispersImage2,
-      alt: 'Visitors seated together under shade during a Lake Katwe group visit.',
-      title: 'Hosted group visit',
-      description:
-        'A human-centered visit moment showing guests gathered together during a community experience.',
-    },
-    {
-      src: wispersImage3,
-      alt: 'Local women standing with salt crystals during a Lake Katwe visit.',
-      title: 'Local salt story',
-      description:
-        'A people-focused salt heritage image that connects community, guiding and visitor learning.',
-    },
-    {
-      src: wispersImage4,
-      alt: 'Guests seated together while travelling during a Lake Katwe visit.',
-      title: 'Travel companions',
-      description:
-        'A shared travel moment showing visitors moving together as part of the wider experience.',
-    },
-    {
-      src: wispersImage5,
-      alt: 'Visitors standing by palms and water near Lake Katwe.',
-      title: 'Visitor photo stop',
-      description:
-        'A relaxed community and visitor moment around the Lake Katwe travel setting.',
-    },
-    {
-      src: wispersImage6,
-      alt: 'Guests gathered around a dining table at local accommodation.',
-      title: 'Shared dining',
-      description:
-        'A hosted dining moment that fits community, hospitality and visitor welcome.',
-    },
-    {
-      src: wispersImage7,
-      alt: 'Tour guests wearing life jackets during a water-based outing.',
-      title: 'Group boat outing',
-      description:
-        'A group visitor scene showing people taking part in a supported travel activity.',
-    },
-    {
-      src: wispersImage8,
-      alt: 'Guests seated together during a group travel experience.',
-      title: 'Group travel moment',
-      description:
-        'A shared visitor experience that supports group travel, school visits and guided planning.',
-    },
-    {
-      src: wispersImage9,
-      alt: 'A visitor looking out from a poolside accommodation area toward Lake Katwe.',
-      title: 'Guest lake view',
-      description:
-        'A human-centered accommodation moment with a visitor enjoying the Lake Katwe view.',
-    },
-    {
-      src: wisperImage10,
-      alt: 'A visitor standing beside the water with Lake Katwe scenery behind.',
-      title: 'Lake visit portrait',
-      description:
-        'A visitor portrait that connects the community travel experience with the lakeside setting.',
-    },
-    {
-      src: fisherManImage,
-      alt: 'A local man standing on a small boat on the water near Lake Katwe.',
-      title: 'Local lake activity',
-      description:
-        'A local person on the water, adding human context to the Lake Katwe experience.',
+      src: communitySaltWork,
+      alt: 'Community members sharing Lake Katwe salt-working traditions with visitors.',
+      title: 'Community salt heritage',
+      description: 'Community members share the skills and stories behind Lake Katwe’s salt heritage.',
     },
   ],
   tours: [
     {
-      src: fisherManImage,
-      alt: 'A local guide on the water near Lake Katwe.',
+      src: guidedLakeTour,
+      alt: 'A local guide leading an experience on the water near Lake Katwe.',
       title: 'Guided lake tour',
-      description:
-        'A guide-supported lake experience for visitors learning about place, landscape and daily activity.',
+      description: 'A guide-supported lake experience focused on local knowledge and the landscape.',
     },
     {
-      src: wispersImage7,
-      alt: 'Tour guests wearing life jackets during a water-based outing.',
+      src: boatTourGuests,
+      alt: 'Guests wearing life jackets during a guided boat outing.',
       title: 'Guest boat outing',
-      description:
-        'A group tour moment showing visitor support, safety equipment and shared travel experiences.',
+      description: 'Visitors enjoy a supported water-based outing with appropriate safety equipment.',
     },
   ],
   accommodation: [
     {
-      src: wispersImage6,
+      src: guestHouseDining,
       alt: 'Guests gathered around a dining table at local accommodation.',
       title: 'Guest house dining',
-      description:
-        'Accommodation support for visitors who want meals, rest and planning help during their stay.',
+      description: 'A welcoming shared dining space for visitors staying near Lake Katwe.',
     },
     {
-      src: wispersImage9,
-      alt: 'A visitor looking out from a poolside accommodation area toward Lake Katwe.',
+      src: accommodationPoolView,
+      alt: 'A guest enjoying the poolside view at accommodation near Lake Katwe.',
       title: 'Poolside lake view',
-      description:
-        'A relaxed stay setting with views across the Lake Katwe area and space to unwind between activities.',
+      description: 'A relaxed place to unwind and enjoy views across the Lake Katwe area.',
     },
   ],
 }

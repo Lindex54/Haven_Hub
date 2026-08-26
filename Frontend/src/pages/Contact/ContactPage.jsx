@@ -20,9 +20,26 @@ function ContactPage() {
           <div className="card space-y-5">
             <h2 className="text-card-title font-bold text-text-main">Contact information</h2>
             <div className="space-y-4 text-sm leading-7 text-text-muted">
-              <p>Phone: {siteConfig.phone}</p>
-              <p>WhatsApp: {siteConfig.whatsapp}</p>
-              <p>Email: {siteConfig.email}</p>
+              <p>
+                Phone:{' '}
+                <a className="hover:text-primary" href={`tel:${siteConfig.phone}`}>
+                  {siteConfig.phone}
+                </a>
+              </p>
+              <p>
+                WhatsApp:{' '}
+                <a className="hover:text-primary" href={`https://wa.me/${siteConfig.whatsapp.replace(/\D/g, '')}`}>
+                  {siteConfig.whatsapp}
+                </a>
+              </p>
+              <div>
+                <p>Email:</p>
+                {siteConfig.emails.map((email) => (
+                  <a className="block hover:text-primary" href={`mailto:${email}`} key={email}>
+                    {email}
+                  </a>
+                ))}
+              </div>
               <p>Operating hours: {siteConfig.hours}</p>
               <p>Location: {siteConfig.location}</p>
               <p>Map: Placeholder only until a verified location reference is provided.</p>

@@ -32,7 +32,13 @@ function AboutPage() {
             </article>
           ))}
         </div>
-        <div className="mt-8">
+        <div className="mt-8 flex flex-wrap gap-4">
+          <Button to="/about/vision-mission" variant="outline">
+            Our Vision &amp; Mission
+          </Button>
+          <Button to="/about/brand-story" variant="outline">
+            Brand Story &amp; Logo Meaning
+          </Button>
           <Button to="/about/guides">Meet Our Guides</Button>
         </div>
       </PageSection>

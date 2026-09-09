@@ -39,25 +39,14 @@ export const publicNavigation = [
       { label: 'Stay Information', path: '/stay/information' },
     ],
   },
-  {
-    label: 'Gallery',
-    path: '/gallery',
-    children: [
-      { label: 'Full Gallery', path: '/gallery' },
-      { label: 'Lake Katwe', path: '/gallery/lake-katwe' },
-      { label: 'Salt Mining', path: '/gallery/salt-mining' },
-      { label: 'Nature and Landscapes', path: '/gallery/nature' },
-      { label: 'Wildlife and Birds', path: '/gallery/wildlife' },
-      { label: 'Community Experiences', path: '/gallery/community' },
-      { label: 'Tours', path: '/gallery/tours' },
-      { label: 'Accommodation', path: '/gallery/accommodation' },
-    ],
-  },
+  { label: 'Gallery', path: '/gallery' },
   {
     label: 'About',
     path: '/about',
     children: [
       { label: 'About the Company', path: '/about' },
+      { label: 'Vision & Mission', path: '/about/vision-mission' },
+      { label: 'Brand Story & Logo Meaning', path: '/about/brand-story' },
       { label: 'Our Story', path: '/about/story' },
       { label: 'Our Guides', path: '/about/guides' },
       { label: 'Community Commitment', path: '/about/community-commitment' },

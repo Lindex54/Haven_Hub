@@ -3,6 +3,7 @@ import { A11y, Keyboard } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import Button from '../common/Button'
+import CtaBar from '../common/CtaBar'
 import PageSection from '../common/PageSection'
 import SectionHeader from '../common/SectionHeader'
 import { accommodation } from '../../data/accommodation'
@@ -125,9 +126,7 @@ function AccommodationPreview() {
         <p className="text-center text-sm font-semibold text-primary">
           Swipe to explore the rooms, then select one to view its full details.
         </p>
-        <div className="flex justify-center">
-          <Button to="/stay">View Accommodation</Button>
-        </div>
+        <CtaBar to="/stay">View Accommodation</CtaBar>
       </div>
     </PageSection>
   )

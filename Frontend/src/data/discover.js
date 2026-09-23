@@ -1,5 +1,6 @@
 import placeholder from '../assets/images/placeholders/lake-katwe-placeholder.png'
 import saltMiningImage from '../assets/images/discover/lake-katwe-traditional-salt-mining.png'
+import wildlifeBirdlifeImage from '../assets/images/discover/lake-katwe-wildlife-birdlife.png'
 
 export const discoverHighlights = [
   {
@@ -164,9 +165,21 @@ export const discoverPages = {
     image: placeholder,
     sections: [
       {
-        heading: 'Birdwatching potential',
+        heading: 'Wildlife and Birdlife',
+        image: wildlifeBirdlifeImage,
+        imageAlt: 'Flamingos and small wading birds feeding along the Lake Katwe shoreline',
         body:
-          'Visitors interested in birdlife can request quieter pacing, early starts and guide support tailored to observation.',
+          'The extreme salinity of Lake Katwe itself supports only specialised microorganisms and algae — no fish live in its waters. However, the surrounding landscape is rich in life.',
+      },
+      {
+        heading: 'Birdwatching at Lake Munyanyange',
+        body:
+          'Nearby Lake Munyanyange, a seasonal alkaline wetland, attracts migratory birds, including flocks of lesser flamingos and African spoonbills, especially at certain times of year. The broader crater landscape and proximity to Queen Elizabeth National Park mean visitors may also encounter other bird species and, in the wider area, mammals such as elephants, buffalo, warthogs and various antelope.',
+      },
+      {
+        heading: 'The Crater Drive',
+        body:
+          'The famous Crater Drive, approximately 27 km, through Queen Elizabeth National Park offers scenic viewpoints over multiple explosion craters, making Lake Katwe an excellent stop on a full-day exploration of the park’s volcanic features.',
       },
       {
         heading: 'A flexible outdoor experience',

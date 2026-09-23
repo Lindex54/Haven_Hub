@@ -9,7 +9,7 @@ function DiscoverDetailPage({ slug }) {
   const page = discoverPages[slug]
   usePageMeta(page.title)
 
-  const hasSidebar = slug !== 'salt-mining'
+  const hasSidebar = slug !== 'salt-mining' && slug !== 'wildlife'
 
   return (
     <main>

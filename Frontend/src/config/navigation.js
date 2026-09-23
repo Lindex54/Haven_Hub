@@ -9,7 +9,6 @@ export const publicNavigation = [
       { label: 'Nature and Landscape', path: '/discover/nature' },
       { label: 'Community and Culture', path: '/discover/community' },
       { label: 'Wildlife and Birdlife', path: '/discover/wildlife' },
-      { label: 'Nearby Attractions', path: '/discover/nearby-attractions' },
     ],
   },
   {
@@ -20,11 +19,6 @@ export const publicNavigation = [
       { label: 'Lake Katwe Guided Tour', path: '/experiences/lake-katwe-tour' },
       { label: 'Salt-Mining Experience', path: '/experiences/salt-mining' },
       { label: 'Nature Walks', path: '/experiences/nature-walks' },
-      { label: 'Birdwatching', path: '/experiences/birdwatching' },
-      { label: 'Community Experience', path: '/experiences/community' },
-      { label: 'Photography Tours', path: '/experiences/photography' },
-      { label: 'Cultural Tours', path: '/experiences/cultural-tour' },
-      { label: 'Group and School Visits', path: '/experiences/group-visits' },
     ],
   },
   {

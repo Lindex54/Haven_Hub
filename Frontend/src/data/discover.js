@@ -1,4 +1,5 @@
 import placeholder from '../assets/images/placeholders/lake-katwe-placeholder.png'
+import saltMiningImage from '../assets/images/discover/lake-katwe-traditional-salt-mining.png'
 
 export const discoverHighlights = [
   {
@@ -72,19 +73,38 @@ export const discoverPages = {
     image: placeholder,
     sections: [
       {
-        heading: 'A heritage-focused visit',
+        heading: 'Traditional Salt Mining',
+        image: saltMiningImage,
+        imageAlt: 'Miners harvesting salt from the traditional pans at Lake Katwe',
         body:
-          'This page introduces the heritage dimension of Lake Katwe without making unsupported claims about production levels, earnings or historical specifics.',
+          'The salt works at Lake Katwe are one of Africa’s oldest continuously operating artisanal salt production sites. More than 10,000 individual salt pans line the shores. Mining peaks during the dry seasons, typically January to March and July to September, when intense sunlight drives rapid evaporation.',
       },
       {
-        heading: 'Visitor learning opportunities',
-        body:
-          'A guide can help visitors understand place, landscape and heritage themes while keeping expectations grounded and respectful.',
+        heading: 'The Process',
+        list: [
+          'Preparing and flooding shallow pans with lake water.',
+          'Allowing the sun to evaporate the water, leaving salt crystals behind.',
+          'Harvesting by hand: women often collect the surface crust (higher-grade edible salt), while men extract denser rock salt from the bottom, sometimes using wooden rafts or floating platforms.',
+          'Drying, sorting and packaging the salt for sale.',
+        ],
       },
       {
-        heading: 'Photography and etiquette',
+        heading: 'Types of Salt Produced',
+        list: [
+          'High-quality edible table salt (sodium chloride, Grade 1).',
+          'Rock salt used as livestock salt licks.',
+          'Darker, mineral-rich “black salt” valued by traditional healers.',
+        ],
+      },
+      {
+        heading: 'Production and Trade',
         body:
-          'Visitors should ask before taking close-up images and follow local guidance around timing, distance and respectful interactions.',
+          'Annual production is estimated at around 15,000 tonnes of crystalline salt. Traders from Uganda and neighbouring countries purchase the product, supporting both local families and regional markets.',
+      },
+      {
+        heading: 'Visiting the Salt Pans',
+        body:
+          'Visitors can join guided community tours to walk among the pans, observe the process up close, and learn directly from the miners about their techniques, challenges and heritage.',
       },
     ],
   },

@@ -9,7 +9,6 @@ export const publicNavigation = [
       { label: 'Nature and Landscape', path: '/discover/nature' },
       { label: 'Community and Culture', path: '/discover/community' },
       { label: 'Wildlife and Birdlife', path: '/discover/wildlife' },
-      { label: 'Nearby Attractions', path: '/discover/nearby-attractions' },
     ],
   },
   {
@@ -20,11 +19,6 @@ export const publicNavigation = [
       { label: 'Lake Katwe Guided Tour', path: '/experiences/lake-katwe-tour' },
       { label: 'Salt-Mining Experience', path: '/experiences/salt-mining' },
       { label: 'Nature Walks', path: '/experiences/nature-walks' },
-      { label: 'Birdwatching', path: '/experiences/birdwatching' },
-      { label: 'Community Experience', path: '/experiences/community' },
-      { label: 'Photography Tours', path: '/experiences/photography' },
-      { label: 'Cultural Tours', path: '/experiences/cultural-tour' },
-      { label: 'Group and School Visits', path: '/experiences/group-visits' },
     ],
   },
   {
@@ -39,25 +33,14 @@ export const publicNavigation = [
       { label: 'Stay Information', path: '/stay/information' },
     ],
   },
-  {
-    label: 'Gallery',
-    path: '/gallery',
-    children: [
-      { label: 'Full Gallery', path: '/gallery' },
-      { label: 'Lake Katwe', path: '/gallery/lake-katwe' },
-      { label: 'Salt Mining', path: '/gallery/salt-mining' },
-      { label: 'Nature and Landscapes', path: '/gallery/nature' },
-      { label: 'Wildlife and Birds', path: '/gallery/wildlife' },
-      { label: 'Community Experiences', path: '/gallery/community' },
-      { label: 'Tours', path: '/gallery/tours' },
-      { label: 'Accommodation', path: '/gallery/accommodation' },
-    ],
-  },
+  { label: 'Gallery', path: '/gallery' },
   {
     label: 'About',
     path: '/about',
     children: [
       { label: 'About the Company', path: '/about' },
+      { label: 'Vision & Mission', path: '/about/vision-mission' },
+      { label: 'Brand Story & Logo Meaning', path: '/about/brand-story' },
       { label: 'Our Story', path: '/about/story' },
       { label: 'Our Guides', path: '/about/guides' },
       { label: 'Community Commitment', path: '/about/community-commitment' },

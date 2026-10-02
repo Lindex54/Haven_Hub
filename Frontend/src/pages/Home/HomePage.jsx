@@ -5,7 +5,6 @@ import FeaturedExperiences from '../../components/home/FeaturedExperiences'
 import GalleryPreview from '../../components/home/GalleryPreview'
 // import GuidesPreview from '../../components/home/GuidesPreview'
 import Hero from '../../components/home/Hero'
-import NatureHeritagePreview from '../../components/home/NatureHeritagePreview'
 import Testimonials from '../../components/home/Testimonials'
 import TourPackagesPreview from '../../components/home/TourPackagesPreview'
 import TravelInformationPreview from '../../components/home/TravelInformationPreview'
@@ -24,7 +23,6 @@ function HomePage() {
       <FeaturedExperiences />
       <TourPackagesPreview />
       <AccommodationPreview />
-      <NatureHeritagePreview />
       <GalleryPreview />
       <WhyTravelWithUs />
       {/* <GuidesPreview /> */}

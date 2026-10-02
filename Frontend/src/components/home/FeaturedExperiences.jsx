@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import CtaBar from '../common/CtaBar'
 import SectionHeader from '../common/SectionHeader'
 import { experiences } from '../../data/experiences'
 import backgroundImage from '../../assets/images/discover/lake-katwe-local-salt-guide.jpg'
@@ -60,15 +61,7 @@ function FeaturedExperiences() {
       </div>
 
       <div className="container-custom pb-12 md:pb-16">
-        <Link
-          className="group flex min-h-20 w-full items-center justify-center gap-4 bg-primary px-7 py-5 text-center text-lg font-bold !text-text-white shadow-card transition-colors hover:bg-primary-dark"
-          to="/experiences"
-        >
-          Explore All Experiences
-          <span className="grid size-9 place-items-center rounded-full bg-secondary text-primary-dark transition-transform duration-300 group-hover:translate-x-1">
-            <ArrowRight aria-hidden="true" size={18} />
-          </span>
-        </Link>
+        <CtaBar to="/experiences">Explore All Experiences</CtaBar>
       </div>
     </section>
   )

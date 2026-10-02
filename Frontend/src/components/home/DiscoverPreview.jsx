@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Button from '../common/Button'
+import CtaBar from '../common/CtaBar'
 import PageSection from '../common/PageSection'
 import SectionHeader from '../common/SectionHeader'
 import { discoverHighlights } from '../../data/discover'
@@ -79,12 +80,14 @@ function DiscoverPreview() {
       <div className="space-y-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeader
+            eyebrow="Discover"
             title="Discover Lake Katwe"
+            description="Landscape, heritage, wildlife and community — the themes that shape every visit."
           />
           <div className="flex items-center gap-3" aria-label="Discover carousel controls">
             <button
               aria-label="Show previous discover card"
-              className="grid size-12 place-items-center border border-text-main bg-transparent text-text-main transition-colors hover:bg-text-main hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="grid size-12 place-items-center rounded-full border border-border bg-surface text-text-main shadow-soft transition-colors hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               onClick={showPrevious}
               type="button"
             >
@@ -92,7 +95,7 @@ function DiscoverPreview() {
             </button>
             <button
               aria-label="Show next discover card"
-              className="grid size-12 place-items-center border border-text-main bg-transparent text-text-main transition-colors hover:bg-text-main hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              className="grid size-12 place-items-center rounded-full border border-border bg-surface text-text-main shadow-soft transition-colors hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               onClick={showNext}
               type="button"
             >
@@ -121,7 +124,7 @@ function DiscoverPreview() {
             {discoverHighlights.map((item, index) => (
               <article
                 aria-label={`${index + 1} of ${discoverHighlights.length}: ${item.title}`}
-                className="flex shrink-0 flex-col overflow-hidden border border-border bg-surface shadow-card"
+                className="flex shrink-0 flex-col overflow-hidden rounded-card border border-border bg-surface shadow-card"
                 key={item.path}
                 style={{ width: cardStep ? cardStep - 24 : `${100 / cardsPerView}%` }}
               >
@@ -134,7 +137,7 @@ function DiscoverPreview() {
                 <div className="flex flex-1 flex-col items-start gap-4 p-6 lg:p-7">
                   <h3 className="text-card-title font-semibold text-text-main">{item.title}</h3>
                   <p className="flex-1 text-sm leading-7 text-text-muted">{item.description}</p>
-                  <Button className="!rounded-none" to={item.path} variant="outline">
+                  <Button to={item.path} variant="outline">
                     Learn more
                   </Button>
                 </div>
@@ -143,25 +146,21 @@ function DiscoverPreview() {
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-5">
-          <div className="flex gap-2" aria-label="Choose a discover slide">
-            {Array.from({ length: maxSlide + 1 }, (_, index) => (
-              <button
-                aria-label={`Go to slide ${index + 1}`}
-                aria-pressed={activeSlide === index}
-                className={`h-1.5 transition-all duration-300 ${
-                  activeSlide === index ? 'w-10 bg-primary' : 'w-5 bg-border hover:bg-text-muted'
-                }`}
-                key={index}
-                onClick={() => setActiveSlide(index)}
-                type="button"
-              />
-            ))}
-          </div>
-          <Button className="!rounded-none" to="/discover">
-            Discover Lake Katwe
-          </Button>
+        <div className="flex justify-center gap-2" aria-label="Choose a discover slide">
+          {Array.from({ length: maxSlide + 1 }, (_, index) => (
+            <button
+              aria-label={`Go to slide ${index + 1}`}
+              aria-pressed={activeSlide === index}
+              className={`h-1.5 transition-all duration-300 ${
+                activeSlide === index ? 'w-10 bg-primary' : 'w-5 bg-border hover:bg-text-muted'
+              }`}
+              key={index}
+              onClick={() => setActiveSlide(index)}
+              type="button"
+            />
+          ))}
         </div>
+        <CtaBar to="/discover">Discover Lake Katwe</CtaBar>
       </div>
     </PageSection>
   )

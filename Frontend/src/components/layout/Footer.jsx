@@ -1,6 +1,12 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import YoutubeIcon from "../common/icons/YoutubeIcon";
 import { siteConfig } from "../../config/siteConfig";
+import { socialLinks } from "../../config/socialLinks";
+
+const socialIcons = {
+  YouTube: YoutubeIcon,
+};
 
 function FooterLink({ children, to }) {
   return (
@@ -96,6 +102,28 @@ function Footer() {
                 <MapPin size={17} className="mt-0.5 shrink-0 text-secondary" />
                 {siteConfig.location}
               </p>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              {socialLinks
+                .filter((link) => !link.disabled && link.href)
+                .map((link) => {
+                  const Icon = socialIcons[link.label];
+                  if (!Icon) return null;
+
+                  return (
+                    <a
+                      aria-label={link.label}
+                      className="grid size-10 place-items-center rounded-full border border-white/20 text-white transition hover:border-secondary hover:bg-secondary hover:text-primary-dark"
+                      href={link.href}
+                      key={link.label}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <Icon size={17} />
+                    </a>
+                  );
+                })}
             </div>
           </div>
         </div>

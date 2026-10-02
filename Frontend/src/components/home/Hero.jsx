@@ -48,7 +48,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="relative isolate overflow-hidden bg-warm-cream">
+    <section className="relative isolate overflow-hidden bg-primary-dark">
       <div className="absolute inset-0 -z-30 bg-[#16231d]" aria-hidden="true">
         {heroImages.map((image, index) => (
           <img
@@ -73,16 +73,12 @@ function Hero() {
               <p className="text-sm font-semibold uppercase tracking-[0.34em] text-white/60">
                 Lake Katwe, Uganda
               </p>
-              <h1 className='mx-auto max-w-5xl text-[3rem] leading-[0.96] tracking-[-0.04em] text-white sm:text-[4.5rem] lg:text-[6.4rem] [font-family:Georgia,"Times_New_Roman",serif]'>
+              <h1 className="mx-auto max-w-5xl text-[2.75rem] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[4rem] lg:text-[5.5rem]">
                 {siteConfig.name}
               </h1>
               <p className="mx-auto max-w-3xl text-lg leading-8 text-white/82 md:text-xl">
                 {siteConfig.tagline}
               </p>
-              {/* <p className="mx-auto max-w-2xl text-base leading-8 text-white/66 md:text-lg">
-                Guided tours, heritage-focused visits, travel planning and
-                accommodation for visitors exploring the Lake Katwe area.
-              </p> */}
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button className="min-w-44 justify-center" to="/plan-your-visit">

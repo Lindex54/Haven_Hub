@@ -2,7 +2,7 @@ import { A11y, Autoplay, FreeMode, Keyboard } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/free-mode'
-import Button from '../common/Button'
+import CtaBar from '../common/CtaBar'
 import PageSection from '../common/PageSection'
 import SectionHeader from '../common/SectionHeader'
 import { gallery, galleryCategories } from '../../data/gallery'
@@ -65,7 +65,7 @@ function GalleryPreview() {
             })}
           </Swiper>
         </div>
-        <Button to="/gallery">View Full Gallery</Button>
+        <CtaBar to="/gallery">View Full Gallery</CtaBar>
       </div>
     </PageSection>
   )

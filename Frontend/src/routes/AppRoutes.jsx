@@ -8,11 +8,12 @@ import DiscoverPage from '../pages/Discover/DiscoverPage'
 import NotFoundPage from '../pages/Errors/NotFoundPage'
 import ExperienceDetailsPage from '../pages/Experiences/ExperienceDetailsPage'
 import ExperiencesPage from '../pages/Experiences/ExperiencesPage'
-import GalleryCategoryPage from '../pages/Gallery/GalleryCategoryPage'
 import GalleryPage from '../pages/Gallery/GalleryPage'
 import HomePage from '../pages/Home/HomePage'
 import PrivacyPage from '../pages/Legal/PrivacyPage'
 import TermsPage from '../pages/Legal/TermsPage'
+import BrandStoryPage from '../pages/About/BrandStoryPage'
+import VisionMissionPage from '../pages/About/VisionMissionPage'
 import BookingConfirmationPage from '../pages/PlanVisit/BookingConfirmationPage'
 import InquiryConfirmationPage from '../pages/PlanVisit/InquiryConfirmationPage'
 import PlanVisitPage from '../pages/PlanVisit/PlanVisitPage'
@@ -81,27 +82,10 @@ function AppRoutes() {
         <Route element={<AccommodationDetailsPage />} path="/stay/:slug" />
 
         <Route element={<GalleryPage />} path="/gallery" />
-        <Route
-          element={<GalleryCategoryPage category="lake-katwe" />}
-          path="/gallery/lake-katwe"
-        />
-        <Route
-          element={<GalleryCategoryPage category="salt-mining" />}
-          path="/gallery/salt-mining"
-        />
-        <Route element={<GalleryCategoryPage category="nature" />} path="/gallery/nature" />
-        <Route element={<GalleryCategoryPage category="wildlife" />} path="/gallery/wildlife" />
-        <Route
-          element={<GalleryCategoryPage category="community" />}
-          path="/gallery/community"
-        />
-        <Route element={<GalleryCategoryPage category="tours" />} path="/gallery/tours" />
-        <Route
-          element={<GalleryCategoryPage category="accommodation" />}
-          path="/gallery/accommodation"
-        />
 
         <Route element={<AboutPage />} path="/about" />
+        <Route element={<VisionMissionPage />} path="/about/vision-mission" />
+        <Route element={<BrandStoryPage />} path="/about/brand-story" />
         <Route element={<AboutDetailPage slug="story" />} path="/about/story" />
         <Route element={<AboutDetailPage slug="guides" />} path="/about/guides" />
         <Route

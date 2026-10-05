@@ -73,6 +73,9 @@ function PlanVisitForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+
+    if (isSubmitting) return
+
     const nextErrors = validate()
     setErrors(nextErrors)
 
@@ -85,6 +88,8 @@ function PlanVisitForm() {
       await submitInquiry('plan-visit', values)
       showToast('Visit request submitted successfully.', 'success')
       navigate('/inquiry-confirmation')
+    } catch {
+      showToast("We couldn't submit your request right now. Please try again.", 'error')
     } finally {
       setIsSubmitting(false)
     }

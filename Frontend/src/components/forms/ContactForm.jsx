@@ -29,6 +29,8 @@ function ContactForm() {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
+    if (isSubmitting) return
+
     const nextErrors = {}
 
     if (!values.fullName.trim()) nextErrors.fullName = 'Full name is required.'
@@ -47,6 +49,8 @@ function ContactForm() {
       await submitInquiry('contact', values)
       showToast('Inquiry sent successfully.', 'success')
       navigate('/inquiry-confirmation')
+    } catch {
+      showToast("We couldn't submit your request right now. Please try again.", 'error')
     } finally {
       setIsSubmitting(false)
     }
